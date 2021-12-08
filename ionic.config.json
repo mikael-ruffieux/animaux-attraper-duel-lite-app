@@ -1,0 +1,7 @@
+{
+  "name": "animaux-attraper-duel-lite",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
