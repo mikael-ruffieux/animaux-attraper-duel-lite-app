@@ -24,3 +24,11 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: 'Pokemon Fire Red';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/pokemon_fire_red.woff') format('woff'),
+        url('./assets/fonts/pokemon_fire_red.ttf') format('truetype');
+}
