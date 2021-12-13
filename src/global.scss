@@ -25,10 +25,77 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+
+/* Custom SCSS */
+:root {
+    --font-s: 18px;
+    --font-m: 24px;
+    --font-l: 28px;
+    --font-xl: 36px;
+
+    --bg-color: lightyellow;
+}
+
 @font-face {
     font-family: 'Pokemon Fire Red';
     font-style: normal;
     font-weight: 400;
     src: url('./assets/fonts/pokemon_fire_red.woff') format('woff'),
         url('./assets/fonts/pokemon_fire_red.ttf') format('truetype');
+}
+
+* {
+    font-family: 'Pokemon Fire Red', monospace;
+    letter-spacing: 0.01em;
+    font-size: var(--font-m);
+}
+
+#background-content {
+    background-color: var(--bg-color);
+}
+
+h1, h2, h3 {
+    text-transform: uppercase;
+    line-height: 100%;
+}
+
+h1 { font-size: var(--font-xl); }
+h2 { font-size: var(--font-xl); }
+h3 { font-size: var(--font-l); }
+
+h4 {
+    font-size: var(--font-m);
+    line-height: 100%;
+}
+
+
+/* Ionic components customization */ 
+ion-app {
+    --ion-background-color: var(--bg-color);
+}
+
+ion-button {
+    --border-color: black;
+    --border-radius: 0px;
+    --border-style: solid;
+    --border-width: 2px;
+    --box-shadow: 1px 1px 0px var(--ion-color-medium), 1px 0px 0px var(--ion-color-medium), 0px 1px 0px var(--ion-color-medium), inset 4px 4px 0px rgba(var(--ion-color-medium-rgb), 0.5), inset -4px -4px 0px rgba(var(--ion-color-light-contrast-rgb), 0.5);
+
+    --padding-bottom: 10px;
+    --padding-top: 10px;
+    --padding-start: 20px;
+    --padding-end: 20px;
+
+    --background-activated : var(--ion-color-secondary);
+    --background-hover: var(--ion-color-secondary);
+    --background-focused: var(--ion-color-secondary);
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    font-size: var(--font-l);
+
+    /* not working
+    text-shadow: 1px 1px 0px var(--ion-color-medium), 1px 0px 0px var(--ion-color-medium), 0px 1px 0px var(--ion-color-medium);
+    */
 }
