@@ -8,13 +8,17 @@ import { ComponentsPageRoutingModule } from './components-routing.module';
 
 import { ComponentsPage } from './components.page';
 
+/* Custom Components */
+import { PageTitleComponent } from '../page-title/page-title.component';
+import { CardListComponent } from '../card-list/card-list.component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComponentsPageRoutingModule
+    ComponentsPageRoutingModule,
   ],
-  declarations: [ComponentsPage]
+  declarations: [ComponentsPage, PageTitleComponent, CardListComponent]
 })
 export class ComponentsPageModule {}

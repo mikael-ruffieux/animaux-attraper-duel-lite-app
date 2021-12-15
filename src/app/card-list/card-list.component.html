@@ -1,0 +1,18 @@
+<ion-card>
+  <ion-card-header>
+    <ion-item>
+      <ion-label>Maitre des animaux</ion-label>
+      <ion-note slot="start">#</ion-note>
+      <ion-note slot="end">Nv</ion-note>
+    </ion-item>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let player of list; let i = index">
+        <ion-label>{{player.pseudo+i}}</ion-label>
+        <ion-note slot="start">{{i+1}}</ion-note>
+        <ion-note slot="end">{{player.level-i}}</ion-note>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
