@@ -19,4 +19,10 @@
     <ion-button routerLink="/profile" >Mon Compte</ion-button>
     <ion-button routerLink="/users" >Classement</ion-button>
   </div>
+
+
+  <div>
+    <ion-button (click)="takePicture()">Take picture</ion-button>
+    <img *ngIf="picture" [src]="picture.url" />
+  </div>
 </ion-content>

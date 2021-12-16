@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "https://animaux-attraper-duel-light.herokuapp.com/",
+  // TODO: add the qimg URL and secret token to the configuration
+  qimgUrl: "https://comem-qimg.herokuapp.com/api",
+  qimgSecret: "3bB0j+dxMSabZfzmTT1fwt0ZgnE0LMnskSCJ4BTLBONYpaRUcdlPH2EhoMGGRjWYKxQL/fP7zuwFRMd/vVyiktQkKEbTKvFgi7gfKBCrkhkXRnpkqPndvwYMLgTprg/Sp5dyaGmsqNwq8PnD4g0gj0b1aOrKu9hdgnmqtTTmNIw="
 };
 
 /*
