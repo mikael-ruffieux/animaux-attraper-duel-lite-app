@@ -1,0 +1,17 @@
+<div class="card detail-card">
+  <div class="card-titles">
+      <h2>{{profile.pseudo}}</h2>
+  </div>
+
+  <ion-grid>
+      <ion-row>
+            <ion-col size="4"><!-- spacer --></ion-col>
+            <ion-col size="4">
+                <app-statistic text="Niveau" value="{{profile.level}}" color="info"></app-statistic>
+            </ion-col>
+            <ion-col size="4"><!-- spacer --></ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <a href="#">Supprimer mon compte</a>
+</div>

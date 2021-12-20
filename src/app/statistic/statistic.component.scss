@@ -15,7 +15,7 @@
 }
 
 .stat-info {
-    --stat-color : var(--ion-color-info);
+    --stat-color : var(--ion-color-tertiary);
 }
 
 .stat-title {
@@ -29,7 +29,7 @@
 
 .stat-title > span {
     position: relative;
-    top: -14px;
+    top: -11px;
     color: white;
     text-transform: uppercase;
     text-shadow: 1px 0 0 var(--stat-color), -1px 0 0 var(--stat-color), 0 1px 0 var(--stat-color), 0 -1px 0 var(--stat-color), 1px 1px var(--stat-color), -1px -1px 0 var(--stat-color), 1px -1px 0 var(--stat-color), -1px 1px 0 var(--stat-color);

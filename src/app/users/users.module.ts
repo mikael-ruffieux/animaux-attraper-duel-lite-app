@@ -9,6 +9,7 @@ import { UsersPageRoutingModule } from './users-routing.module';
 import { UsersPage } from './users.page';
 
 import { PageTitleComponent } from '../page-title/page-title.component';
+import { CardListComponent } from '../card-list/card-list.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { PageTitleComponent } from '../page-title/page-title.component';
     IonicModule,
     UsersPageRoutingModule
   ],
-  declarations: [UsersPage , PageTitleComponent]
+  declarations: [UsersPage , PageTitleComponent, CardListComponent]
 })
 export class UsersPageModule {}

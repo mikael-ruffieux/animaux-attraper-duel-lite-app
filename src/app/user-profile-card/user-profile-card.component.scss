@@ -1,0 +1,42 @@
+.card {
+    background-color: white;
+    padding: 20px 12px;
+    border: 2px solid #000000;
+    box-shadow: 1px 1px 0px var(--dark-grey), 1px 0px 0px var(--dark-grey), 0px 1px 0px var(--dark-grey), inset 4px 4px 0px rgba(255, 255, 255, 0.5), inset -4px -4px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    margin: 15px auto;
+}
+
+.detail-card {
+    margin-top: 115px;
+}
+
+.detail-card .card-image {
+    display: flex;
+    height: 100px;
+}
+
+.detail-card .card-image > img {
+    width: auto;
+    height: 200px;
+    margin:auto;
+    position: relative;
+    top: -100px;
+}
+
+.detail-card .card-titles {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.detail-card .card-titles h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.detail-card .card-titles h4 {
+    margin: 0;
+    padding: 0;
+    color: var(--dark-grey);
+}
