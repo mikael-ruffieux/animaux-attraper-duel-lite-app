@@ -8,6 +8,8 @@ import { UsersPageRoutingModule } from './users-routing.module';
 
 import { UsersPage } from './users.page';
 
+import { PageTitleComponent } from '../page-title/page-title.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { UsersPage } from './users.page';
     IonicModule,
     UsersPageRoutingModule
   ],
-  declarations: [UsersPage]
+  declarations: [UsersPage , PageTitleComponent]
 })
 export class UsersPageModule {}

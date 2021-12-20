@@ -8,6 +8,8 @@ import { TypePageRoutingModule } from './type-routing.module';
 
 import { TypePage } from './type.page';
 
+
+
 @NgModule({
   imports: [
     CommonModule,

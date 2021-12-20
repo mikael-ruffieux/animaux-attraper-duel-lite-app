@@ -8,6 +8,8 @@ import { AnimalsPageRoutingModule } from './animals-routing.module';
 
 import { AnimalsPage } from './animals.page';
 
+import { PageTitleComponent } from '../page-title/page-title.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { AnimalsPage } from './animals.page';
     IonicModule,
     AnimalsPageRoutingModule
   ],
-  declarations: [AnimalsPage]
+  declarations: [AnimalsPage, PageTitleComponent]
 })
 export class AnimalsPageModule {}
