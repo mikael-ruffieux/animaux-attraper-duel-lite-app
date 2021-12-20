@@ -1,0 +1,112 @@
+/* Animal Button */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.animal-button {
+    display: block;
+    margin: 15px auto;
+    height: 80px;
+}
+
+
+.animal-button:hover > .animal-description, .animal-button:focus > .animal-description {
+    border: 2px solid var(--ion-color-warning);
+}
+
+.animal-button > .animal-image {
+    background-color: var(--ion-color-secondary);
+    position: relative;
+    height: 80px;
+    width: 80px;
+    z-index: 10;
+    border: solid 2px black;
+    border-radius: 100%;
+    display: flex;
+}
+
+.animal-button > .animal-image > img {
+    height: 75px;
+    width: auto;
+    position: relative;
+    left: -5px;
+    top: -2px;
+    image-rendering: pixelated;
+
+}
+
+.animal-button > .animal-description {
+    background-color: var(--ion-color-primary);
+    border: solid 2px black;
+    border-radius: 0px;
+    box-shadow: 1px 1px 0px var(--ion-color-medium), 1px 0px 0px var(--ion-color-medium), 0px 1px 0px var(--ion-color-medium), inset 4px 4px 0px rgba(255, 255, 255, 0.5), inset -4px -4px 0px rgba(0, 0, 0, 0.5);
+    height: 80px;
+    margin-left:40px;
+    display:flex;
+    align-content: middle;
+    padding: 15px;
+    position: relative;
+    top:-80px;
+}
+
+.animal-button > .animal-description .animal-titles {
+    color: white;
+    text-shadow: 1px 1px 0px var(--ion-color-medium), 1px 0px 0px var(--ion-color-medium), 0px 1px 0px var(--ion-color-medium);
+    margin-left: 50px;
+    align-self: center;
+    width: 100%;
+}
+
+.animal-button > .animal-description .animal-titles p {
+    line-height: 100%;
+}
+
+.animal-button > .animal-description .animal-titles > h3, .animal-button > .animal-description .animal-titles > p  {
+    margin: 0;
+    padding: 0;
+}
+
+.animal-button > .animal-description .animal-stats {
+    align-self: center;
+    float:right;
+    min-width: 120px;
+    flex-direction: column;
+}
+
+.animal-button > .animal-description .animal-stats > .button-stat {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.animal-button > .animal-description .animal-stats > .button-stat > .button-stat-name {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    background-color: var(--ion-color-medium);
+    height: 10px;
+    border-radius: 5px;
+    color:white;
+    margin-top: 10px;
+}
+
+.animal-button > .animal-description .animal-stats > .button-stat > .button-stat-name > span {
+    display: block;
+    position: relative;
+    top: -11px;
+    text-shadow: 1px 0 0 var(--ion-color-medium), -1px 0 0 var(--ion-color-medium), 0 1px 0 var(--ion-color-medium), 0 -1px 0 var(--ion-color-medium), 1px 1px var(--ion-color-medium), -1px -1px 0 var(--ion-color-medium), 1px -1px 0 var(--ion-color-medium), -1px 1px 0 var(--ion-color-medium);
+}
+
+.animal-button > .animal-description .animal-stats > .button-stat > .button-stat-value {
+    display: flex;
+    width: 50%;
+    background-color: white;
+    justify-content: right;
+    margin-left: 15px;
+    margin-top: 2px;
+    border-radius: 5px;
+}
+
+.animal-button > .animal-description .animal-stats > .button-stat > .button-stat-value > span {
+    padding-right: 5px;
+}
