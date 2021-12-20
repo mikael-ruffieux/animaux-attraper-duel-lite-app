@@ -11,6 +11,7 @@ import { ComponentsPage } from './components.page';
 /* Custom Components */
 import { PageTitleComponent } from '../page-title/page-title.component';
 import { CardListComponent } from '../card-list/card-list.component';
+/* .Custom Components */
 
 @NgModule({
   imports: [
