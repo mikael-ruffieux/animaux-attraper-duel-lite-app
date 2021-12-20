@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'components',
     loadChildren: () => import('./components/components.module').then( m => m.ComponentsPageModule)
-  },  {
+  },
+  {
     path: 'start',
     loadChildren: () => import('./start/start.module').then( m => m.StartPageModule)
   },
@@ -38,8 +39,6 @@ const routes: Routes = [
     path: 'animals',
     loadChildren: () => import('./animals/animals.module').then( m => m.AnimalsPageModule)
   },
-
-];
 
 ];
 
