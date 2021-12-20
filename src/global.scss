@@ -121,9 +121,10 @@ ion-button {
     */
 }
 
-ion-list {
+ion-list, .list-md {
     --background: #fff;
     background: #fff;
+    padding: 0px;
 }
 
 ion-card {

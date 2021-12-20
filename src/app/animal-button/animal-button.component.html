@@ -1,0 +1,31 @@
+<a href="#" class="animal-button">
+  <div class="animal-image">
+      <img src="../../assets/animals/{{animal.type}}_32.png" alt="Animal">
+  </div>
+
+  <div class="animal-description">
+      <div class="animal-titles">
+          <h3>{{animal.name}}</h3>
+          <p>Lv{{animal.level}}</p>
+      </div>
+      <div class="animal-stats">
+          <div class="button-stat">
+              <div class="button-stat-name">
+                  <span>PV</span>
+              </div>
+              <div class="button-stat-value">
+                  <span>{{animal.hp}}</span>
+              </div>
+          </div>
+
+          <div class="button-stat">
+              <div class="button-stat-name">
+                  <span>ATC</span>
+              </div>
+              <div class="button-stat-value">
+                  <span>{{animal.attack}}</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</a>
