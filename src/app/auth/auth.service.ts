@@ -2,9 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import {environment} from "../../environments/environment"
 
-import { AuthResponse } from "../../model/auth-response";
-import { User } from "../../model/user";
-import { AuthRequest } from "../../model/auth-request";
+import { AuthResponse } from "../../models/auth-response";
+import { User } from "../../models/user";
+import { AuthRequest } from "../../models/auth-request";
 
 import { Observable, ReplaySubject, from } from "rxjs";
 import { delayWhen, map } from "rxjs/operators";

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QimgImage } from "../../model/QimgImage.model";
+import { QimgImage } from "../../models/QimgImage.model";
 import { PictureService } from "../../app/picture/picture.service";
 import { AuthService } from "../auth/auth.service";
 import { AuthRequest } from "../../model/auth-request";
