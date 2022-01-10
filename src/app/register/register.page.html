@@ -1,9 +1,30 @@
-<ion-header>
+<ion-content [fullscreen]="true" class="background-image" padding>
 
-</ion-header>
+  <ion-img  id="logotext" src="../../assets/text-images/logo-text.png"></ion-img>
 
-<ion-content>
+  <app-page-title title="S'enregistrer" backUrl="/start"></app-page-title>
 
-  <ion-img src="../../assets/text-images/logo-text.png"></ion-img>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" autofocus>Pseudonyme</ion-label>
+        <ion-input  maxlength=12 minlength=4></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" >Mot de passe</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Répétez le mot de passe</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block">Connexion</ion-button>
+      <a routerLink="/login">Se connecter</a>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

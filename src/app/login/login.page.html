@@ -1,9 +1,31 @@
-<ion-header>
 
-</ion-header>
 
-<ion-content>
 
-  <ion-img src="../../assets/text-images/logo-text.png"></ion-img>
+
+<ion-content [fullscreen]="true" class="background-image" padding>
+
+  <ion-img  id="logotext" src="../../assets/text-images/logo-text.png"></ion-img>
+
+  <app-page-title title="Se connecter" backUrl="/start"></app-page-title>
+
+
+<form (submit)="login()">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" autofocus >Pseudonyme</ion-label>
+        <ion-input name="pseudo"  required maxlength=12 minlength=4  [(ngModel)]="authRequest.pseudo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" >Mot de passe</ion-label>
+        <ion-input name="password" required type="password"  [(ngModel)]="authRequest.password"></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block">Connexion</ion-button>
+      <a routerLink="/register">Créer un compte</a>
+    </ion-card-content>
+  </ion-card>
+</form>
 
 </ion-content>
