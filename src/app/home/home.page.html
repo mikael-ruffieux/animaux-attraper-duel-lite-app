@@ -17,7 +17,7 @@
     <ion-button size="large" color="primary" expand="block" routerLink="/animals" >Animadex</ion-button>
     <ion-button size="large" color="primary" expand="block" routerLink="/users" >Classement</ion-button>
     <hr>
-    <ion-button size="large" color="danger" expand="block">Se déconnecter</ion-button>
+    <ion-button (click)="logOut()" size="large" color="danger" expand="block">Se déconnecter</ion-button>
     <ion-button color="light" routerLink="/components" >Go to Components Page</ion-button>
 
   </div>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { QimgImage } from "../../model/QimgImage.model";
 import { PictureService } from "../../app/picture/picture.service";
+import { AuthService } from "../auth/auth.service";
+import { AuthRequest } from "../../model/auth-request";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +17,9 @@ export class HomePage {
 
   constructor(
     
-    private pictureService: PictureService
+    private pictureService: PictureService,
+    private auth: AuthService,
+    private router: Router
 
 
   ) {}
@@ -30,6 +35,12 @@ export class HomePage {
         console.warn("Could not take picture", err);
       }
     );
+  }
+
+  logOut() {
+    console.log("logging out...");
+    this.auth.logOut();
+    this.router.navigateByUrl("/login");
   }
 
 }
