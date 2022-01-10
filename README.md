@@ -8,3 +8,19 @@ DevMobile Application
 ## Commands
 
 - create new element : `ionic generate elementType NameOfElement` 
+
+## Todolist
+
+- [ ] Gestion du login & register
+- [ ] Structures des pages
+    - [ ] Alex
+- [ ] Gestion des combats
+- [ ] Communication avec l'API
+- [ ] Importation des composantes custom sur les pages enfants
+
+**API**
+
+- [ ] Création des modèles
+    - [ ] User NF
+    - [ ] Animal MR
+    - [ ] AnimalUser MR
