@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="background-image" padding >
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home Page Title</ion-title>
@@ -15,6 +15,6 @@
   </ion-header>
 
   <div id="container">
-    <ion-button routerLink="./id" >cliquer sur ma Vache</ion-button>
+    <ion-button size="large" color="primary" expand="block" routerLink="./id" >cliquer sur ma Vache</ion-button>
   </div>
 </ion-content>

@@ -1,21 +1,9 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Profil</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-page-title [title]="'Mon profil'"></app-page-title>
 
-<ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home Page Title</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="background-image" padding>
 
   <div id="container">
-    <ion-button routerLink="./animals" >Mes Animaux</ion-button>
-   
+    <app-user-profile-card [profile]="user"></app-user-profile-card>
+    <ion-button size="large" color="primary" expand="block" routerLink="./animals" >Mes Animaux</ion-button>
   </div>
 </ion-content>

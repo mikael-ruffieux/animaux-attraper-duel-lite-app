@@ -55,6 +55,10 @@
     background-color: var(--bg-color);
 }
 
+hr {
+    background: var(--ion-color-light);
+}
+
 h1, h2, h3 {
     text-transform: uppercase;
     line-height: 100%;
@@ -121,9 +125,10 @@ ion-button {
     */
 }
 
-ion-list {
+ion-list, .list-md {
     --background: #fff;
     background: #fff;
+    padding: 0px;
 }
 
 ion-card {

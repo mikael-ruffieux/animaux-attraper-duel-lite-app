@@ -1,28 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home Page
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="background-image" padding>
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home Page Title</ion-title>
     </ion-toolbar>
   </ion-header>
 
+  <ion-img id="home-image" src="../../assets/text-images/logo-text.png"></ion-img>
+
   <div id="container">
-    <ion-button routerLink="/components" >Go to Components Page</ion-button>
-    <ion-button routerLink="/animals" >Animadex</ion-button>
-    <ion-button routerLink="/profile" >Mon Compte</ion-button>
-    <ion-button routerLink="/users" >Classement</ion-button>
-  </div>
+    <ion-button size="large" color="success" expand="block" >COMBATTRE</ion-button>
+    <div>
+      <ion-button size="large" color="warning" expand="block"  (click)="takePicture()">Capturer</ion-button>
+      <img *ngIf="picture" [src]="picture.url" />
+    </div>
+    <ion-button size="large" color="primary" expand="block" routerLink="/profile" >Mon Compte</ion-button>
+    <ion-button size="large" color="primary" expand="block" routerLink="/animals" >Animadex</ion-button>
+    <ion-button size="large" color="primary" expand="block" routerLink="/users" >Classement</ion-button>
+    <hr>
+    <ion-button size="large" color="danger" expand="block">Se déconnecter</ion-button>
+    <ion-button color="light" routerLink="/components" >Go to Components Page</ion-button>
 
-
-  <div>
-    <ion-button (click)="takePicture()">Take picture</ion-button>
-    <img *ngIf="picture" [src]="picture.url" />
   </div>
 </ion-content>

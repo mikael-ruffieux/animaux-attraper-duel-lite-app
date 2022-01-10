@@ -1,12 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Users</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<app-page-title [title]="'Classement général'"></app-page-title>
+<ion-content [fullscreen]="true" class="background-image" padding>
+  <app-card-list [list]="players"></app-card-list>
 </ion-content>

@@ -1,0 +1,43 @@
+.stat {
+    --stat-color : var(--ion-color-medium);
+}
+
+.stat-warning {
+    --stat-color : var(--ion-color-warning);
+}
+
+.stat-danger {
+    --stat-color : var(--ion-color-danger);
+}
+
+.stat-success {
+    --stat-color : var(--ion-color-success);
+}
+
+.stat-info {
+    --stat-color : var(--ion-color-tertiary);
+}
+
+.stat-title {
+    text-align: center;
+    background-color: var(--stat-color);
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.stat-title > span {
+    position: relative;
+    top: -11px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 0 0 var(--stat-color), -1px 0 0 var(--stat-color), 0 1px 0 var(--stat-color), 0 -1px 0 var(--stat-color), 1px 1px var(--stat-color), -1px -1px 0 var(--stat-color), 1px -1px 0 var(--stat-color), -1px 1px 0 var(--stat-color);
+}
+
+.stat-value {
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 5px;
+    text-align: center;
+}

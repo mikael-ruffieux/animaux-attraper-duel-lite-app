@@ -6,8 +6,9 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<app-page-title [title]="'Animaux'"></app-page-title>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="background-image" padding>
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home Page Title</ion-title>
@@ -15,7 +16,7 @@
   </ion-header>
 
   <div id="container">
-    <ion-button routerLink="./type" >Voir un animal</ion-button>
+    <ion-button size="large" color="primary" expand="block" routerLink="./type" >Voir un animal</ion-button>
     
   </div>
 </ion-content>

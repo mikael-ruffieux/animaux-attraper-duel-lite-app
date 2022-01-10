@@ -8,6 +8,10 @@ import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
 
+import { PageTitleComponent } from '../page-title/page-title.component';
+import { UserProfileCardComponent } from '../user-profile-card/user-profile-card.component';
+import { StatisticComponent } from '../statistic/statistic.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +19,6 @@ import { ProfilePage } from './profile.page';
     IonicModule,
     ProfilePageRoutingModule
   ],
-  declarations: [ProfilePage]
+  declarations: [ProfilePage , PageTitleComponent, UserProfileCardComponent, StatisticComponent]
 })
 export class ProfilePageModule {}

@@ -8,6 +8,9 @@ import { AnimalsPageRoutingModule } from './animals-routing.module';
 
 import { AnimalsPage } from './animals.page';
 
+
+
+
 @NgModule({
   imports: [
     CommonModule,
