@@ -6,13 +6,18 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<app-page-title [title]="'Type'"></app-page-title>
+<!--<app-page-title [title]="'Type'"></app-page-title>-->
+
 <ion-content [fullscreen]="true" class="background-image" padding>
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Home Page Title</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div>
+    {{animal.type}}
+  </div>
 
   <div id="container">
     <ion-button size="large" color="primary" expand="block" routerLink="./edit" >editer un animal</ion-button>

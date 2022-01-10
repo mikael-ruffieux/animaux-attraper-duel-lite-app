@@ -9,7 +9,7 @@ const routes: Routes = [
     component: AnimalsPage
   },
   {
-    path: 'type',
+    path: ':type',
     loadChildren: () => import('../Animals/type/type.module').then( m => m.TypePageModule)
   }
 ];

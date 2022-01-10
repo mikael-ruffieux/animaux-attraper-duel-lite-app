@@ -8,7 +8,8 @@ import { AnimalsPageRoutingModule } from './animals-routing.module';
 
 import { AnimalsPage } from './animals.page';
 
-import { PageTitleComponent } from '../page-title/page-title.component';
+import { PageTitleComponent } from '@app/page-title/page-title.component';
+import { AnimalTypeButtonComponent } from '@app/animal-type-button/animal-type-button.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { PageTitleComponent } from '../page-title/page-title.component';
     IonicModule,
     AnimalsPageRoutingModule
   ],
-  declarations: [AnimalsPage, PageTitleComponent]
+  declarations: [AnimalsPage, AnimalTypeButtonComponent, PageTitleComponent]
 })
 export class AnimalsPageModule {}
