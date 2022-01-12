@@ -19,5 +19,6 @@ import { CardListComponent } from '../card-list/card-list.component';
     UsersPageRoutingModule
   ],
   declarations: [UsersPage , PageTitleComponent, CardListComponent]
+ 
 })
 export class UsersPageModule {}

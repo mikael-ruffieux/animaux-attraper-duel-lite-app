@@ -12,6 +12,10 @@ import { PageTitleComponent } from '../page-title/page-title.component';
 import { UserProfileCardComponent } from '../user-profile-card/user-profile-card.component';
 import { StatisticComponent } from '../statistic/statistic.component';
 
+import { CardListComponent } from '../card-list/card-list.component';
+
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,6 +23,6 @@ import { StatisticComponent } from '../statistic/statistic.component';
     IonicModule,
     ProfilePageRoutingModule
   ],
-  declarations: [ProfilePage , PageTitleComponent, UserProfileCardComponent, StatisticComponent]
+  declarations: [ProfilePage , PageTitleComponent,CardListComponent,StatisticComponent]
 })
 export class ProfilePageModule {}
