@@ -19,6 +19,6 @@ import { StatisticComponent } from '../statistic/statistic.component';
     IonicModule,
     ProfilePageRoutingModule
   ],
-  declarations: [ProfilePage , PageTitleComponent, UserProfileCardComponent, StatisticComponent]
+  declarations: [ProfilePage]
 })
 export class ProfilePageModule {}

@@ -8,8 +8,6 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 
-import { PageTitleComponent } from '../page-title/page-title.component';
-
 
 @NgModule({
   imports: [
@@ -18,6 +16,6 @@ import { PageTitleComponent } from '../page-title/page-title.component';
     IonicModule,
     LoginPageRoutingModule
   ],
-  declarations: [LoginPage, PageTitleComponent]
+  declarations: [LoginPage]
 })
 export class LoginPageModule {}

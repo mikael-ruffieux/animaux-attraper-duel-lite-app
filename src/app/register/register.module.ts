@@ -9,9 +9,6 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 import { RegisterPage } from './register.page';
 
 
-import { PageTitleComponent } from '../page-title/page-title.component';
-
-
 @NgModule({
   imports: [
     CommonModule,
@@ -19,6 +16,6 @@ import { PageTitleComponent } from '../page-title/page-title.component';
     IonicModule,
     RegisterPageRoutingModule
   ],
-  declarations: [RegisterPage, PageTitleComponent]
+  declarations: [RegisterPage]
 })
 export class RegisterPageModule {}

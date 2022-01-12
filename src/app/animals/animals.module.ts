@@ -8,16 +8,17 @@ import { AnimalsPageRoutingModule } from './animals-routing.module';
 
 import { AnimalsPage } from './animals.page';
 
-import { PageTitleComponent } from '@app/page-title/page-title.component';
-import { AnimalTypeButtonComponent } from '@app/animal-type-button/animal-type-button.component';
+import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AnimalsPageRoutingModule
+    AnimalsPageRoutingModule,
+    CustomComponentsModule
   ],
-  declarations: [AnimalsPage, AnimalTypeButtonComponent, PageTitleComponent]
+  declarations: [AnimalsPage]
 })
 export class AnimalsPageModule {}
