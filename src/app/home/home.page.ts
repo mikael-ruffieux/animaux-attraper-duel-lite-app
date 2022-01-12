@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { QimgImage } from "../../model/QimgImage.model";
+import { QimgImage } from "../../models/QimgImage.model";
 import { PictureService } from "../../app/picture/picture.service";
 
 @Component({

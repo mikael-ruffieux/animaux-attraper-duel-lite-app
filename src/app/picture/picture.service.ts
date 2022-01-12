@@ -11,7 +11,7 @@ import { Observable, from } from "rxjs";
 import { switchMap, tap } from "rxjs/operators";
 
 import { environment } from "../../environments/environment";
-import { QimgImage } from "../../model/QimgImage.model";
+import { QimgImage } from "../../models/QimgImage.model";
 
 /**
  * Service to take pictures and upload them to the qimg API.

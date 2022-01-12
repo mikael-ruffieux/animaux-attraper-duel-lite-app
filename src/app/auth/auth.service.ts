@@ -4,9 +4,9 @@ import { ReplaySubject, Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import {environment} from "../../environments/environment"
 
-import { AuthResponse } from "../../model/auth-response";
-import { User } from "../../model/user";
-import { AuthRequest } from "../../model/auth-request";
+import { AuthResponse } from "../../models/auth-response";
+import { User } from "../../models/user";
+import { AuthRequest } from "../../models/auth-request";
 
 
 

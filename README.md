@@ -22,5 +22,5 @@ DevMobile Application
 
 - [ ] Création des modèles
     - [ ] User NF
-    - [ ] Animal MR
-    - [ ] AnimalUser MR
+    - [x] Animal MR
+    - [x] AnimalUser MR

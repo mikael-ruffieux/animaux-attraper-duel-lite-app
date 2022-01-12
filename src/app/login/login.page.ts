@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
-import { AuthRequest } from "../../model/auth-request";
+import { AuthRequest } from "../../models/auth-request";
 import { AuthService } from "../auth/auth.service";
 
 @Component({

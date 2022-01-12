@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TypePageRoutingModule } from './type-routing.module';
 
 import { TypePage } from './type.page';
+import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
 
 
 
@@ -15,7 +16,8 @@ import { TypePage } from './type.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    TypePageRoutingModule
+    TypePageRoutingModule,
+    CustomComponentsModule,
   ],
   declarations: [TypePage]
 })
