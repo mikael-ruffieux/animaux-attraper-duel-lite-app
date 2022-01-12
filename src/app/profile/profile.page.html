@@ -1,9 +1,9 @@
-<app-page-title [title]="'Mon profil'"></app-page-title>
+<app-page-title [title]="'Mon profil'" [backUrl]="'home'"></app-page-title>
 
 <ion-content [fullscreen]="true" class="background-image" padding>
 
   <div id="container">
-    <app-user-profile-card [profile]="user"></app-user-profile-card>
+    <app-user-profile-card [profile]="profile"></app-user-profile-card>
     <ion-button size="large" color="primary" expand="block" routerLink="./animals" >Mes Animaux</ion-button>
   </div>
 </ion-content>

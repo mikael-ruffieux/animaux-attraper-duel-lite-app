@@ -7,12 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
-
-import { PageTitleComponent } from '../page-title/page-title.component';
-import { UserProfileCardComponent } from '../user-profile-card/user-profile-card.component';
-import { StatisticComponent } from '../statistic/statistic.component';
-
-import { CardListComponent } from '../card-list/card-list.component';
+import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
 
 
 
@@ -21,8 +16,9 @@ import { CardListComponent } from '../card-list/card-list.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    CustomComponentsModule
   ],
-  declarations: [ProfilePage , PageTitleComponent,CardListComponent,StatisticComponent]
+  declarations: [ProfilePage]
 })
 export class ProfilePageModule {}

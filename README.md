@@ -24,3 +24,8 @@ DevMobile Application
     - [ ] User NF
     - [x] Animal MR
     - [x] AnimalUser MR
+
+
+### Questions pour la prochaine fois
+- Pourquoi routerLink ne marche pas dans les Custom Components ?
+- 
