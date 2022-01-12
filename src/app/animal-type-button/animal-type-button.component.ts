@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Animal } from 'src/models/animal';
+import { Routes, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-animal-type-button',

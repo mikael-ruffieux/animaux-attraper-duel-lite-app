@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { Animal } from 'src/models/animal';
@@ -10,7 +10,7 @@ import { Animal } from 'src/models/animal';
 })
 export class TypePage implements OnInit {
   pageRoute: any;
-  animal : Animal;
+  @Input() animal : Animal;
 
   constructor(private route: ActivatedRoute, public http: HttpClient) {
     this.route.params.subscribe(params => this.pageRoute = params);

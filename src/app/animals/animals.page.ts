@@ -11,9 +11,6 @@ export class AnimalsPage implements OnInit {
   animals: any;
 
   constructor(
-      // Inject the AuthService
-      private auth: AuthService,
-      // Inject the HTTP client
       public http: HttpClient
     ) {}
 
@@ -22,7 +19,6 @@ export class AnimalsPage implements OnInit {
     const url = "https://animaux-attraper-duel-light.herokuapp.com/animals";
     this.http.get(url).subscribe((animals) => {
       this.animals = animals;
-      console.log(`Animals loaded`, animals);
     });
   }
 }
