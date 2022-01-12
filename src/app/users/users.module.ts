@@ -16,5 +16,6 @@ import { UsersPage } from './users.page';
     UsersPageRoutingModule
   ],
   declarations: [UsersPage]
+ 
 })
 export class UsersPageModule {}
