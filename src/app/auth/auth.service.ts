@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import {environment} from "../../environments/environment"
 
 import { AuthResponse } from "../../models/auth-response";
-import { User } from "../../models/user";
+import { User } from "../../models/user.model";
 import { AuthRequest } from "../../models/auth-request";
 
 import { Observable, ReplaySubject, from } from "rxjs";

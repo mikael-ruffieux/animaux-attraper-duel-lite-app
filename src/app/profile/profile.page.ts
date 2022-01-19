@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
-import { User } from 'src/models/user';
+import { User } from 'src/models/user.model';
 
 @Component({
   selector: 'app-profile',

@@ -1,19 +1,8 @@
-<ion-header>
- <ion-toolbar>
-  <ion-title>Users</ion-title>
-  <ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-  </ion-buttons>
-</ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="background-image" padding>
 
 
 
-<ion-header collapse="condense">
-  <ion-toolbar>
-    <ion-title size="large">Animals</ion-title>
-  </ion-toolbar>
-</ion-header>
+  <app-page-title title="Enregrister votre Animal" backUrl="/start"></app-page-title>
 
  <img *ngIf="pictureURL" [src]="pictureURL" />
 
@@ -21,3 +10,59 @@
   
 </ion-content>
 
+  <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+    <ion-list>
+      <!-- Animal input -->
+      <ion-item>
+        <ion-label position="floating">Nom de l'animal</ion-label>
+        <ion-input [(ngModel)]="username" inputmode="text" required="true" name="AnimalName"></ion-input>
+      </ion-item>
+
+
+
+
+
+
+
+      <!-- Password input -->
+      <ion-item>
+        <ion-label position="floating">Type de votre animal</ion-label>
+        <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+          <ion-select-option value="brown">Brown</ion-select-option>
+          <ion-select-option value="blonde">Blonde</ion-select-option>
+          <ion-select-option value="black">Black</ion-select-option>
+          <ion-select-option value="red">Red</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button type="submit" expand="block">Valider</ion-button>
+
+      <ion-text color="danger" *ngIf="loginError"> C'est pas possible</ion-text>
+
+
+
+    </div>
+  </form>
+
+  <!-- <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked" autofocus>Pseudonyme</ion-label>
+        <ion-input  maxlength=12 minlength=4></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked" >Mot de passe</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="block">Connexion</ion-button>
+      <a routerLink="/login">Se connecter</a>
+    </ion-card-content>
+  </ion-card> -->
+
+</ion-content>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 
 import { Animal } from 'src/models/animal.model';
+import { AnimalService } from '@app/services/animal.service';
 
 @Component({
   selector: 'app-animals',
@@ -9,19 +9,12 @@ import { Animal } from 'src/models/animal.model';
   styleUrls: ['./animals.page.scss'],
 })
 export class AnimalsPage implements OnInit {
-  //animals: Animal[];
-  animals: any;
+  animals: Animal[];
 
   constructor(
-      public http: HttpClient
+    private animalService: AnimalService
     ) {}
 
   ngOnInit() {
-    // Make an HTTP request to retrieve the trips.
-    const url = "https://animaux-attraper-duel-light.herokuapp.com/animals";
-    this.http.get<Animal[]>(url).subscribe((animals) => {
-      this.animals = animals.map(animal => new Animal().deserialize(animal));
-      console.log(`Animals loaded`, animals);
-    });
-  }
+    this.animalService.getAllAnimals().subscribe(animals => this.animals = animals);}
 }

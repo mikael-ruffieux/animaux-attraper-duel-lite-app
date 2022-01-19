@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+
+import { User } from 'src/models/user.model';
+import { UserService } from '@app/user.service';
 
 @Component({
   selector: 'app-users',
@@ -8,17 +10,12 @@ import { HttpClient } from "@angular/common/http";
 })
 export class UsersPage implements OnInit {
 
-  apiPlayers: any;
+  apiPlayers: User[];
 
-  constructor(public http: HttpClient) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
-    // Make an HTTP request to retrieve the trips.
-    const url = "https://animaux-attraper-duel-light.herokuapp.com/users?pageSize=20";
-    this.http.get(url).subscribe((users) => {
-      this.apiPlayers = users['data'];
-      this.apiPlayers.sort((a:any, b:any) => b.level - a.level);
-    });
+    this.userService.getAllUsers().subscribe(users => this.apiPlayers = users);
   }
 
 }
