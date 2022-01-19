@@ -11,12 +11,13 @@ DevMobile Application
 
 ## Todolist
 
-- [ ] Gestion du login & register
+- [ ] Gestion du register
+- [x] Gestion du login
 - [ ] Structures des pages
     - [ ] Alex
 - [ ] Gestion des combats
 - [ ] Communication avec l'API
-- [ ] Importation des composantes custom sur les pages enfants
+- [x] Importation des composantes custom sur les pages enfants
 
 **API**
 
@@ -24,3 +25,8 @@ DevMobile Application
     - [ ] User NF
     - [x] Animal MR
     - [x] AnimalUser MR
+
+### Questions
+
+- "Caster" le JSON dans un Model
+- Créer des fonctions dans les modèles ?
