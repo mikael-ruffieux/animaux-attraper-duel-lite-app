@@ -7,17 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ProfilePageRoutingModule } from './profile-routing.module';
 
 import { ProfilePage } from './profile.page';
+import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
 
-import { PageTitleComponent } from '../page-title/page-title.component';
-import { UserProfileCardComponent } from '../user-profile-card/user-profile-card.component';
-import { StatisticComponent } from '../statistic/statistic.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    CustomComponentsModule
   ],
   declarations: [ProfilePage]
 })

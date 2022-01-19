@@ -1,5 +1,5 @@
 export const PROFILE: Object = {
-    pseudo: "SalamiSlayer2021",
+    pseudo: "SalamiSlayers69",
     level : 51,
     admin: true,
     animals : null

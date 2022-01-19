@@ -1,4 +1,5 @@
-<app-page-title [title]="'Classement général'"></app-page-title>
+<app-page-title [title]="'Classement général'" [backUrl]="'home'"></app-page-title>
+
 <ion-content [fullscreen]="true" class="background-image" padding>
-  <app-card-list [list]="players"></app-card-list>
+  <app-card-list [list]="apiPlayers"></app-card-list>
 </ion-content>
