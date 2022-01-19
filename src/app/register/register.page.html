@@ -5,7 +5,48 @@
   <app-page-title title="S'enregistrer" backUrl="/start"></app-page-title>
 
 
-  <ion-card>
+  <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+    <ion-list>
+      <!-- Username input -->
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input
+          [(ngModel)]="username"
+          inputmode="text"
+          required="true"
+          name="username"
+        ></ion-input>
+      </ion-item>
+  
+      
+  
+      <!-- Password input -->
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input
+          [(ngModel)]="password"
+          inputmode="text"
+          required="true"
+          type="password"
+          name="password"
+        ></ion-input>
+      </ion-item>
+  
+  
+    </ion-list>
+  
+    <div class="ion-padding">
+      <ion-button type="submit" expand="block">S'enregistrer</ion-button>
+    
+      <ion-text color="danger" *ngIf="loginError">Username or password is invalid.</ion-text>
+
+    <br>
+      <a routerLink="/login">Se connecter</a>
+  
+    </div>
+  </form>
+
+  <!-- <ion-card>
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked" autofocus>Pseudonyme</ion-label>
@@ -17,14 +58,9 @@
         <ion-input type="password"></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked">Répétez le mot de passe</ion-label>
-        <ion-input type="password"></ion-input>
-      </ion-item>
-
       <ion-button type="submit" expand="block">Connexion</ion-button>
       <a routerLink="/login">Se connecter</a>
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 
 </ion-content>

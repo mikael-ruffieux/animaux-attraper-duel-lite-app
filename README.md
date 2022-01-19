@@ -11,12 +11,13 @@ DevMobile Application
 
 ## Todolist
 
-- [ ] Gestion du login & register
+- [ ] Gestion du register
+- [x] Gestion du login
 - [ ] Structures des pages
     - [ ] Alex
 - [ ] Gestion des combats
 - [ ] Communication avec l'API
-- [ ] Importation des composantes custom sur les pages enfants
+- [x] Importation des composantes custom sur les pages enfants
 
 **API**
 
@@ -25,7 +26,7 @@ DevMobile Application
     - [x] Animal MR
     - [x] AnimalUser MR
 
+### Questions
 
-### Questions pour la prochaine fois
 - Pourquoi routerLink ne marche pas dans les Custom Components ?
 - 

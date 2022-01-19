@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
   {
     path: 'home',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -38,11 +40,12 @@ const routes: Routes = [
   {
     path: 'animals',
     loadChildren: () => import('./animals/animals.module').then( m => m.AnimalsPageModule)
-  },  {
+  },
+  {
     path: 'capture',
     loadChildren: () => import('./capture/capture.module').then( m => m.CapturePageModule)
-  },
 
+  }
 
 ];
 

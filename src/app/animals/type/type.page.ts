@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
-import { Animal } from 'src/models/animal';
+import { Animal } from 'src/models/animal.model';
 
 @Component({
   selector: 'app-type',

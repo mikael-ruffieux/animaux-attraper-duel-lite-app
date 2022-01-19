@@ -12,12 +12,13 @@
     <div>
       <ion-button size="large" color="warning" expand="block"  (click)="takePicture()">Capturer</ion-button>
       <img *ngIf="picture" [src]="picture.url" />
+      <!-- à enlever -->
     </div>
     <ion-button size="large" color="primary" expand="block" routerLink="/profile" >Mon Compte</ion-button>
     <ion-button size="large" color="primary" expand="block" routerLink="/animals" >Animadex</ion-button>
     <ion-button size="large" color="primary" expand="block" routerLink="/users" >Classement</ion-button>
     <hr>
-    <ion-button size="large" color="danger" expand="block">Se déconnecter</ion-button>
+    <ion-button (click)="logOut()" size="large" color="danger" expand="block">Se déconnecter</ion-button>
     <ion-button color="light" routerLink="/components" >Go to Components Page</ion-button>
     <ion-button color="light" routerLink="/capture" >Go to Capture page</ion-button>
 

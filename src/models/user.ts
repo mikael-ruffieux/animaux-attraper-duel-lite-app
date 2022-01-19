@@ -1,3 +1,5 @@
+import { AnimalUser } from "./animaluser";
+
 export type User = {
     _id: string,
     pseudo: string;
