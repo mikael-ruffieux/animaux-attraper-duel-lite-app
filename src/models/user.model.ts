@@ -1,4 +1,4 @@
-import { AnimalUser } from "./animaluser";
+import { AnimalUser } from "./animaluser.model";
 
 export type User = {
     _id: string,
