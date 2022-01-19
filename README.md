@@ -11,6 +11,10 @@ DevMobile Application
 
 ## Todolist
 
+- [ ] Edit/delete des AnimalUser
+- [ ] Edit/delete de son propre profile (NF)
+- [ ] Edit/delete des Animal (admin), mais optionnel car seulement 2 ressources modifiables requises
+
 - [ ] Gestion du register
 - [x] Gestion du login
 - [ ] Structures des pages
@@ -22,9 +26,9 @@ DevMobile Application
 **API**
 
 - [ ] Création des modèles
-    - [ ] User NF
+    - [ ] User MR
     - [x] Animal MR
-    - [x] AnimalUser MR
+    - [ ] AnimalUser MR
 
 ### Questions
 
