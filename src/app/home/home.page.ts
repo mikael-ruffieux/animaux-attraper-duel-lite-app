@@ -4,6 +4,7 @@ import { PictureService } from "../../app/picture/picture.service";
 import { AuthService } from "../auth/auth.service";
 import { AuthRequest } from "../../models/auth-request";
 import { Router } from "@angular/router";
+import { StoreService} from "../store/store.service";
 
 @Component({
   selector: 'app-home',
@@ -19,22 +20,26 @@ export class HomePage {
     
     private pictureService: PictureService,
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private store: StoreService
 
 
   ) {}
 
   
   takePicture() {
-    this.pictureService.takeAndUploadPicture().subscribe(
-      (picture) => {
+    this.pictureService.takeAndUploadPicture().subscribe({
+      next: (picture) => {
         this.picture = picture;
-        console.log(this.picture.url)
+        this.store.picture = this.picture.url
+        this.router.navigateByUrl("/capture");
+        // console.log(this.picture.url)
+      
       },
-      (err) => {
+      error: (err) => {
         console.warn("Could not take picture", err);
       }
-    );
+    });
   }
 
   logOut() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService} from "../store/store.service";
 
 @Component({
   selector: 'app-capture',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CapturePage implements OnInit {
 
-  constructor() { }
+  pictureURL: string;
+
+  constructor(private store: StoreService) {
+
+    this.pictureURL = this.store.picture
+   }
 
   ngOnInit() {
   }
+
+
+
 
 }
