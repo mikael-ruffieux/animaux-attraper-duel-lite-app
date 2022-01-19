@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from "../auth/auth.service";
-import { AuthRequest } from "../../model/auth-request";
 import { Router } from "@angular/router";
+import { NgForm } from "@angular/forms";
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from "../auth/auth.service";
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +13,72 @@ import { Router } from "@angular/router";
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  username: string ;
+  password: string ;
+  genre: string;
+  level: number;
+  admin: boolean;
+  isregister: boolean;
+  loginError: boolean;
+
+  constructor(private router: Router, private http: HttpClient, private auth: AuthService) {
+
+    this.genre="Homme";
+    this.level = 1;
+    this.admin = false;
+   }
 
   ngOnInit() {
   }
+
+  onSubmit(form: NgForm): Observable<Object>{
+    
+    if (form.invalid) {
+      return;
+    }
+
+    let hero = {
+      pseudo: this.username,
+      password: this.password,
+      genre: this.genre,
+      level: this.level,
+      admin: this.admin
+    }
+
+    let test = this.http.post(`${environment.apiUrl}users`, hero,)
+
+    test.subscribe({
+      next: () => {
+        this.isregister = true;
+        let authRequest = {
+          pseudo: this.username,
+          password: this.password,
+        }
+        this.auth.logIn$(authRequest).subscribe({
+          next: () => this.router.navigateByUrl("/home"),
+          error: (err) => {
+            this.loginError = true;
+            console.warn(`Authentication failed: ${err.message}`);
+          },
+        });
+      },
+      error: (err) => {
+        this.loginError = true;
+        console.warn(`Register failed: ${err.message}`);
+      },
+
+    });
+    
+
+
+    
+
+    
+
+    
+
+    
+  }
+
 
 }

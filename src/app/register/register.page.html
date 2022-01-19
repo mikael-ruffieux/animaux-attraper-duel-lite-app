@@ -11,51 +11,42 @@
       <ion-item>
         <ion-label position="floating">Username</ion-label>
         <ion-input
+          [(ngModel)]="username"
           inputmode="text"
-          #pseudo="ngModel"
           required="true"
-          name="pseudo"
-          [(ngModel)]="authRequest.pseudo"
+          name="username"
         ></ion-input>
       </ion-item>
   
-      <!-- Error message displayed if the username is invalid -->
-      <ion-item lines="none" *ngIf="pseudo.invalid && pseudo.touched">
-        <ion-text color="danger">Username is required.</ion-text>
-      </ion-item>
+      
   
       <!-- Password input -->
       <ion-item>
         <ion-label position="floating">Password</ion-label>
         <ion-input
+          [(ngModel)]="password"
           inputmode="text"
-          #password="ngModel"
           required="true"
           type="password"
           name="password"
-          [(ngModel)]="authRequest.password"
         ></ion-input>
       </ion-item>
   
-      <!-- Error message displayed if the password is invalid -->
-      <ion-item lines="none" *ngIf="password.invalid && password.touched">
-        <ion-text color="danger">Password is required.</ion-text>
-      </ion-item>
+  
     </ion-list>
   
     <div class="ion-padding">
-      <ion-button type="submit" expand="block">Connexion</ion-button>
+      <ion-button type="submit" expand="block">S'enregistrer</ion-button>
     
-      <!-- Error message displayed if the login failed -->
-      <ion-text color="danger" *ngIf="loginError"
-        >Username or password is invalid.</ion-text
-      ><br>
-      <a routerLink="/register">Créer un compte</a>
+      <ion-text color="danger" *ngIf="loginError">Username or password is invalid.</ion-text>
+
+    <br>
+      <a routerLink="/login">Se connecter</a>
   
     </div>
   </form>
-<!-- 
-  <ion-card>
+
+  <!-- <ion-card>
     <ion-card-content>
       <ion-item>
         <ion-label position="stacked" autofocus>Pseudonyme</ion-label>

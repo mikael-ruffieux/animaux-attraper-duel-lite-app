@@ -8,13 +8,15 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 
+import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule
+    RegisterPageRoutingModule,
+    CustomComponentsModule
   ],
   declarations: [RegisterPage]
 })

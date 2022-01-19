@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { QimgImage } from "../../models/QimgImage.model";
 import { PictureService } from "../../app/picture/picture.service";
 import { AuthService } from "../auth/auth.service";
-import { AuthRequest } from "../../model/auth-request";
+import { AuthRequest } from "../../models/auth-request";
 import { Router } from "@angular/router";
 
 @Component({
@@ -24,12 +24,12 @@ export class HomePage {
 
   ) {}
 
-    // TODO: add a method to take a picture
-  //       (replace it if you already have it)
+  
   takePicture() {
     this.pictureService.takeAndUploadPicture().subscribe(
       (picture) => {
         this.picture = picture;
+        console.log(this.picture.url)
       },
       (err) => {
         console.warn("Could not take picture", err);
@@ -40,7 +40,7 @@ export class HomePage {
   logOut() {
     console.log("logging out...");
     this.auth.logOut();
-    this.router.navigateByUrl("/login");
+    this.router.navigateByUrl("/start");
   }
 
 }
