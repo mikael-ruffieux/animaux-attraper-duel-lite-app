@@ -1,22 +1,22 @@
-import { HttpClient } from "@angular/common/http";
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import {
   Camera,
   CameraResultType,
   CameraSource,
   ImageOptions,
   Photo,
-} from "@capacitor/camera";
-import { Observable, from } from "rxjs";
-import { switchMap, tap } from "rxjs/operators";
+} from '@capacitor/camera';
+import { Observable, from } from 'rxjs';
+import { switchMap, tap } from 'rxjs/operators';
+import { QimgImage } from 'src/models/QimgImage.model';
 
-import { environment } from "../../environments/environment";
-import { QimgImage } from "../../models/QimgImage.model";
+import { environment } from '../../environments/environment';
 
 /**
  * Service to take pictures and upload them to the qimg API.
  */
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class PictureService {
   constructor(private http: HttpClient) {}
 
@@ -31,7 +31,9 @@ export class PictureService {
     // Take a picture.
     // This creates an observable of picture data.
     return this.takePicture().pipe(
-      // Once the picture has been taken, upload it to the qimg API.
+      // Once the picture has been taken, transform it as a base64 string representation.
+      switchMap((photo) => this.readAsBase64(photo)),
+      // With the base64 representation of the image, upload it to the qimg API.
       // This returns a new observable of the resulting QimgImage object.
       switchMap((data) => this.uploadPicture(data)),
       // Once the picture has been uploaded, log a message to the console
@@ -76,13 +78,14 @@ export class PictureService {
    * Returns an observable that will emit the created QimgImage object.
    * An error may be emitted instead if the upload fails.
    */
-  private uploadPicture(photo: Photo): Observable<QimgImage> {
+  private uploadPicture(base64: string | ArrayBuffer): Observable<QimgImage> {
     const requestBody = {
-      data: photo.base64String,
+      data: base64,
     };
 
     const requestOptions = {
       headers: {
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         Authorization: `Bearer ${environment.qimgSecret}`,
       },
     };
@@ -92,5 +95,25 @@ export class PictureService {
       requestBody,
       requestOptions
     );
+  }
+
+  private readAsBase64(photo: Photo): Observable<string | ArrayBuffer> {
+    // Fetch the photo, read as a blob, then convert to base64 format
+    return from(
+      fetch(photo.webPath)
+        .then((response) => response.blob())
+        .then((blob) => this.convertBlobToBase64(blob))
+    );
+  }
+
+  private convertBlobToBase64(blob: Blob): Promise<string | ArrayBuffer> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = reject;
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    });
   }
 }
