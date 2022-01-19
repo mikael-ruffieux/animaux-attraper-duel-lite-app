@@ -1,5 +1,25 @@
-<app-page-title [title]="'Classement général'" [backUrl]="'home'"></app-page-title>
+<app-page-title [title]="'Classement général'" [backUrl]="'home'"></app-page-title><ion-header>
+  
+  <ion-toolbar>
+    <ion-title>Users</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content [fullscreen]="true" class="background-image" padding>
-  <app-card-list [list]="apiPlayers"></app-card-list>
-</ion-content>
+
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Animals</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="background-image" padding>
+    <app-card-list [list]="apiPlayers"></app-card-list>
+  </ion-content>
+
+<!-- <ion-content >
+  <app-card-list [list]="players"></app-card-list>
+</ion-content> -->

@@ -5,12 +5,12 @@ import { AuthGuard } from "./auth/auth.guard";
 const routes: Routes = [
   {
     path: 'home',
-    canActivate: [AuthGuard],//à mettre sur chaque route que l'on veut protéger
+    canActivate: [AuthGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'start',
     pathMatch: 'full'
   },
   {
@@ -41,6 +41,11 @@ const routes: Routes = [
     path: 'animals',
     loadChildren: () => import('./animals/animals.module').then( m => m.AnimalsPageModule)
   },
+  {
+    path: 'capture',
+    loadChildren: () => import('./capture/capture.module').then( m => m.CapturePageModule)
+
+  }
 
 ];
 

@@ -4,13 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AnimalsPageRoutingModule } from './animals-routing.module';
+import { CapturePageRoutingModule } from './capture-routing.module';
 
-import { AnimalsPage } from './animals.page';
+import { CapturePage } from './capture.page';
+
 import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
-
-
-
 
 
 
@@ -19,9 +17,9 @@ import { CustomComponentsModule } from '@app/custom-components/custom-components
     CommonModule,
     FormsModule,
     IonicModule,
-    AnimalsPageRoutingModule,
+    CapturePageRoutingModule,
     CustomComponentsModule
   ],
-  declarations: [AnimalsPage]
+  declarations: [CapturePage]
 })
-export class AnimalsPageModule {}
+export class CapturePageModule {}
