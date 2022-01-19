@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-// Test values
-import { PLAYERS } from '../mock-players';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-users',
@@ -9,11 +7,18 @@ import { PLAYERS } from '../mock-players';
   styleUrls: ['./users.page.scss'],
 })
 export class UsersPage implements OnInit {
-  players = PLAYERS;
 
-  constructor() { }
+  apiPlayers: any;
+
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
+    // Make an HTTP request to retrieve the trips.
+    const url = "https://animaux-attraper-duel-light.herokuapp.com/users?pageSize=20";
+    this.http.get(url).subscribe((users) => {
+      this.apiPlayers = users['data'];
+      this.apiPlayers.sort((a:any, b:any) => b.level - a.level);
+    });
   }
 
 }

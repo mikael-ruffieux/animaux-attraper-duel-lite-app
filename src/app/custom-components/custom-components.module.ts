@@ -7,6 +7,7 @@ import { CardListComponent } from '../card-list/card-list.component';
 import { StatisticComponent } from '../statistic/statistic.component';
 import { AnimalButtonComponent } from '../animal-button/animal-button.component';
 import { AnimalTypeButtonComponent } from '../animal-type-button/animal-type-button.component';
+import { UserProfileCardComponent } from '@app/user-profile-card/user-profile-card.component';
 /* .Custom Components */
 
 @NgModule({
@@ -18,14 +19,16 @@ import { AnimalTypeButtonComponent } from '../animal-type-button/animal-type-but
     CardListComponent,
     StatisticComponent,
     AnimalButtonComponent,
-    AnimalTypeButtonComponent
+    AnimalTypeButtonComponent,
+    UserProfileCardComponent
   ],
   exports: [
     PageTitleComponent,
     CardListComponent,
     StatisticComponent,
     AnimalButtonComponent,
-    AnimalTypeButtonComponent    
+    AnimalTypeButtonComponent,
+    UserProfileCardComponent 
   ]
 })
 export class CustomComponentsModule { }

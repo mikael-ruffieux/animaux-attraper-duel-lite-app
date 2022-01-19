@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
 
-import {PROFILE} from '../mock-user';
+import { User } from 'src/models/user';
 
 @Component({
   selector: 'app-profile',
@@ -8,11 +9,21 @@ import {PROFILE} from '../mock-user';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  user = PROFILE;
+  // on devrait utiliser le modèle ici, mais j'arrive pas
+  profile: any;
 
-  constructor() { }
+  constructor(public http: HttpClient) {
+  }
 
   ngOnInit() {
+    // Make an HTTP request to retrieve the trips.
+    // Hard-coded for now
+    const url = "https://animaux-attraper-duel-light.herokuapp.com/users/SalamiSlayers69";
+    this.http.get(url).subscribe((user) => {
+
+      this.profile = user;
+      console.log(user);
+    });
   }
 
 }

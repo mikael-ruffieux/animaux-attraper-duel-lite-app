@@ -9,9 +9,9 @@
   <ion-card-content>
     <ion-list>
       <ion-item *ngFor="let player of list; let i = index">
-        <ion-label>{{player.pseudo+i}}</ion-label>
+        <ion-label>{{player.pseudo}}</ion-label>
         <ion-note slot="start">{{i+1}}</ion-note>
-        <ion-note slot="end">{{player.level-i}}</ion-note>
+        <ion-note slot="end">{{player.level}}</ion-note>
       </ion-item>
     </ion-list>
   </ion-card-content>

@@ -28,5 +28,5 @@ DevMobile Application
 
 ### Questions
 
-- "Caster" le JSON dans un Model
-- Créer des fonctions dans les modèles ?
+- Pourquoi routerLink ne marche pas dans les Custom Components ?
+- 
