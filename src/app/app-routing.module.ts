@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'animals',
     loadChildren: () => import('./animals/animals.module').then( m => m.AnimalsPageModule)
+  },  {
+    path: 'capture',
+    loadChildren: () => import('./capture/capture.module').then( m => m.CapturePageModule)
   },
+
 
 ];
 
