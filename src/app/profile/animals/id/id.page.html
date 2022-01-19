@@ -1,13 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Id</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
+<app-page-title [title]="'Type'" [backUrl]="'animals'"></app-page-title>
 
 <ion-content [fullscreen]="true" class="background-image" padding>
 
+  <ion-card *ngIf="animal">
+    <ion-card-header>
+      <img src="../../assets/animals/{{animal.type}}_64.png" alt="{{animal.type}}">
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-card-title style="text-transform: uppercase;">{{animal.type}}</ion-card-title>
+      <ion-card-subtitle>{{animal.type}}</ion-card-subtitle>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <app-statistic text='NIV' value='{{animal.level}}' color='info'></app-statistic>
+          </ion-col>
+          <ion-col size="4"><app-statistic text='PV' value="{{animal.hp}}" color='danger'></app-statistic></ion-col>
+          <ion-col size="4"><app-statistic text='ATC' value="{{animal.attack}}" color='success'></app-statistic></ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <h3>Photo de l'animal</h3>
+
+      <img src="{{animal.picture}}" alt="{{animal.type}}">
+    </ion-card-content>
+
+  </ion-card>
+
+
+  <div id="container">
+    <ion-button size="large" color="primary" expand="block" routerLink="edit" >Modifier l'animal</ion-button>
+  </div>
 </ion-content>

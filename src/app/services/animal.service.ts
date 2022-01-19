@@ -10,8 +10,8 @@ import {map} from 'rxjs/operators';
 export class AnimalService {
   constructor(private httpService: HttpClient) {}
 
-  public getAnimal(id: number): Observable<Animal> {
-    return this.httpService.get<Animal>(`https://animaux-attraper-duel-light.herokuapp.com/animals/${id}`).pipe(
+  public getAnimal(type: string): Observable<Animal> {
+    return this.httpService.get<Animal>(`https://animaux-attraper-duel-light.herokuapp.com/animals/${type}`).pipe(
       map(data => new Animal().deserialize(data))
     );
   }

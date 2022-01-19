@@ -1,28 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>mes animaux</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
 <app-page-title [title]="'animals'"></app-page-title>
 
-
 <ion-content [fullscreen]="true" class="background-image" padding>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">mes animaux</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div *ngFor="let animal of animals; let i = index">
     <app-animal-button [animal]="animal"></app-animal-button>
-  </div>
-
-
-
-  <div id="container">
-    <ion-button size="large" color="primary" expand="block" routerLink="./id">cliquer sur ma Vache</ion-button>
   </div>
 </ion-content>

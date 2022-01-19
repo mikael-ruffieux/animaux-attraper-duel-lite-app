@@ -2,31 +2,31 @@
 
 <ion-content [fullscreen]="true" class="background-image" padding>
 
-  <ion-card>
+  <ion-card *ngIf="animal">
     <ion-card-header>
-      <img src="../../assets/animals/{{(animal)?.type}}_64.png" alt="{{(animal)?.type}}">
+      <img src="../../assets/animals/{{animal.type}}_64.png" alt="{{animal.type}}">
     </ion-card-header>
     <ion-card-content>
 
-      <ion-card-title style="text-transform: uppercase;">{{(animal)?.type}}</ion-card-title>
-      <ion-card-subtitle>{{(animal)?.class}}</ion-card-subtitle>
+      <ion-card-title style="text-transform: uppercase;">{{animal.type}}</ion-card-title>
+      <ion-card-subtitle>{{animal.class}}</ion-card-subtitle>
 
-      <p style="font-size: 24px;">{{(animal)?.description}}</p>
+      <p style="font-size: 24px;">{{animal.description}}</p>
 
       <ion-grid>
         <ion-row>
           <ion-col size="4">
-            <app-statistic text='NIV' value='{{(animal)?.level_default}}' color='info'></app-statistic>
+            <app-statistic text='NIV' value='{{animal.level_default}}' color='info'></app-statistic>
           </ion-col>
-          <ion-col size="4"><app-statistic text='PV' value="{{(animal)?.hp_default}}" color='danger'></app-statistic></ion-col>
-          <ion-col size="4"><app-statistic text='ATC' value="{{(animal)?.attack_default}}" color='success'></app-statistic></ion-col>
+          <ion-col size="4"><app-statistic text='PV' value="{{animal.hp_default}}" color='danger'></app-statistic></ion-col>
+          <ion-col size="4"><app-statistic text='ATC' value="{{animal.attack_default}}" color='success'></app-statistic></ion-col>
         </ion-row>
         <ion-row>
           <ion-col size="4">
-            <app-statistic text='VARIATION' value='{{(animal)?.level_variation}}' color='info'></app-statistic>
+            <app-statistic text='VARIATION' value='{{animal.level_variation}}' color='info'></app-statistic>
           </ion-col>
-          <ion-col size="4"><app-statistic text='VARIATION' value="{{(animal)?.hp_variation}}" color='danger'></app-statistic></ion-col>
-          <ion-col size="4"><app-statistic text='VARIATION' value="{{(animal)?.attack_variation}}" color='success'></app-statistic></ion-col>
+          <ion-col size="4"><app-statistic text='VARIATION' value="{{animal.hp_variation}}" color='danger'></app-statistic></ion-col>
+          <ion-col size="4"><app-statistic text='VARIATION' value="{{animal.attack_variation}}" color='success'></app-statistic></ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>

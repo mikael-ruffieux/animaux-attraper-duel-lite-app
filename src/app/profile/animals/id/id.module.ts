@@ -8,12 +8,15 @@ import { IdPageRoutingModule } from './id-routing.module';
 
 import { IdPage } from './id.page';
 
+import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    IdPageRoutingModule
+    IdPageRoutingModule,
+    CustomComponentsModule,
   ],
   declarations: [IdPage]
 })

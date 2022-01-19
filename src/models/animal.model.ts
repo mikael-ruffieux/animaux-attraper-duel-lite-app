@@ -10,6 +10,7 @@ export class Animal implements Deserializable {
     public level_default: number;
     public level_variation: number;
     public class: string;
+    public description: string;
 
     deserialize(input: any): this {
         return Object.assign(this, input);

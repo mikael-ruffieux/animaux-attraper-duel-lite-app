@@ -8,10 +8,12 @@ import { IonicStorageModule } from "@ionic/storage-angular";
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BackButtonDirective } from './directives/back-button.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BackButtonDirective,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot(),],

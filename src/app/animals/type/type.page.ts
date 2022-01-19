@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from "@angular/common/http";
 import { Animal } from 'src/models/animal.model';
+import { AnimalService } from '@app/services/animal.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-type',
@@ -10,19 +11,14 @@ import { Animal } from 'src/models/animal.model';
 })
 export class TypePage implements OnInit {
   pageRoute: any;
-  @Input() animal : Animal;
+  animal : Animal;
 
-  constructor(private route: ActivatedRoute, public http: HttpClient) {
+  constructor(private route: ActivatedRoute, private animalService: AnimalService) {
     this.route.params.subscribe(params => this.pageRoute = params);
   }
 
   ngOnInit() {
-        // Make an HTTP request to retrieve the trips.
-        const url = `https://animaux-attraper-duel-light.herokuapp.com/animals/${this.pageRoute.type}`;
-        this.http.get(url).subscribe((animal) => {
-          this.animal = animal[0];
-          console.log(`Animal loaded`, this.animal);
-        });
+    this.animalService.getAnimal(this.pageRoute.type).pipe(tap(console.log)).subscribe(animal => this.animal = animal[0]);
   }
 
 }

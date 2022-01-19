@@ -9,7 +9,7 @@ const routes: Routes = [
     component: AnimalsPage
   },
   {
-    path: 'id',
+    path: ':id',
     loadChildren: () => import('../../Profile/Animals/id/id.module').then( m => m.IdPageModule)
   }
 ];
