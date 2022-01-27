@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { InProgressPageRoutingModule } from './in-progress-routing.module';
 
 import { InProgressPage } from './in-progress.page';
+import { CustomComponentsModule } from '@app/custom-components/custom-components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    InProgressPageRoutingModule
+    InProgressPageRoutingModule,
+    CustomComponentsModule
   ],
   declarations: [InProgressPage]
 })
