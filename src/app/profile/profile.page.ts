@@ -19,19 +19,14 @@ export class ProfilePage implements OnInit {
   profile: Omit<User, 'deserialize'|'animalUserService'>;
 
   constructor(public http: HttpClient, private store: StoreService,  private userService: UserService) {
-
-
+    this.userService.getUser(this.store.username).subscribe(user =>{
+      this.profile = user
+    });
   }
 
 
   ngOnInit() {
-
-    this.userService.getUser(this.store.username).subscribe(user =>{
-      this.profile = user
-    });
     
-
-
     }
 
 

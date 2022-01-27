@@ -12,7 +12,9 @@ export class AnimalsPage implements OnInit {
   // Hardcoded until login is good
   animals: AnimalUser[];
 
-  constructor(private animalUserService: AnimalUserService, private store: StoreService) { }
+  constructor(private animalUserService: AnimalUserService, private store: StoreService) {
+    this.animals = [];
+  }
 
   ngOnInit() {
     this.animalUserService.getAllAnimals(this.store.username).subscribe(animals => this.animals = animals);
