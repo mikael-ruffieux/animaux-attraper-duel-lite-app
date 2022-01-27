@@ -1,5 +1,7 @@
 import { AnimalUser } from "./animaluser.model";
+import { AnimalUserService } from "@app/services/animaluser.service";
 import { Deserializable } from "./deserializable.model";
+import { AnimalService } from "@app/services/animal.service";
 
 export class User implements Deserializable {
   public _id: string;
@@ -9,13 +11,11 @@ export class User implements Deserializable {
   public genre: string;
   public animals: AnimalUser[];
 
+  public animalUserService: AnimalUserService;
+
   deserialize(input: any): this {
-    // Assign input to our object BEFORE deserialize our cars to prevent already deserialized cars from being overwritten.
-    Object.assign(this, input);
-
-    // Iterate over all cars for our user and map them to a proper `Car` model
-    this.animals = input.animals.map(animal => new AnimalUser().deserialize(animal));
-
+    // Assign input to our object BEFORE deserialize our animals to prevent already deserialized animals from being overwritten.
+    Object.assign(this, input.data);
     return this;
   }
 };

@@ -1,0 +1,8 @@
+<app-page-title [title]="'Choisissez votre combattant'" [backUrl]="'home'"></app-page-title>
+
+<ion-content [fullscreen]="true" class="background-image" padding>
+  <div *ngFor="let animal of animals; let i = index">
+    <app-animal-button [animal]="animal" [fight]=true></app-animal-button>
+  </div>
+  <ion-button size="large" color="success" expand="block" routerLink="/fight/searching" >Choisir son animal</ion-button>
+</ion-content>
