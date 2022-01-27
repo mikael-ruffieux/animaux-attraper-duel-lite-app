@@ -34,3 +34,13 @@ DevMobile Application
 
 - Pourquoi routerLink ne marche pas dans les Custom Components ?
 - 
+
+
+### Websocket
+
+https://mediacomem.github.io/comem-devmobil/latest/subjects/websocket/#11
+
+Le joueur clique sur Combattre > a choisi un animal
+
+`app` : envoi le type de requête (`start`), le pseudo et l'id de l'animal.
+`ws` : 
