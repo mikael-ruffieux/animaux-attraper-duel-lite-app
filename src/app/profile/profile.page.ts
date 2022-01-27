@@ -5,6 +5,9 @@ import { User } from 'src/models/user.model';
 
 import { StoreService } from "../store/store.service";
 
+import { UserService } from '@app/services/user.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-profile',
@@ -13,23 +16,46 @@ import { StoreService } from "../store/store.service";
 })
 export class ProfilePage implements OnInit {
   // on devrait utiliser le modèle ici, mais j'arrive pas
-  profile: User;
+  profile: Omit<User, 'deserialize'|'animalUserService'>;
 
-  constructor(public http: HttpClient, private store: StoreService) {
+  constructor(public http: HttpClient, private store: StoreService,  private userService: UserService) {
+
+
   }
 
 
   ngOnInit() {
+
+    this.userService.getUser(this.store.username).subscribe(user =>{
+      this.profile = user
+    });
     
 
 
-    const url = `https://animaux-attraper-duel-light.herokuapp.com/users/${this.store.username}`;
-    this.http.get(url).subscribe((user) => {
-      console.log(user[0]);
+    }
+
+
+  onClickdelete() {
+
+
+    
+    let test = this.http.delete(`${environment.apiUrl}users/${this.store.username}`)
+
+    test.subscribe({
+      next: () => {
+        console.log("yes")
+      },
+      error: (err) => {
+        console.warn(`Register failed: ${err.message}`);
+      },
+
     });
 
 
-    }
+  }
+
+
+
 
 
 }

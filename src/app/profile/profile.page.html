@@ -3,7 +3,8 @@
 <ion-content [fullscreen]="true" class="background-image" padding>
 
   <div id="container" >
-    <app-user-profile-card [profile]="profile">test</app-user-profile-card>
+    <app-user-profile-card [profile]="profile"></app-user-profile-card>
     <ion-button size="large" color="primary" expand="block" routerLink="./animals" >Mes Animaux</ion-button>
+    <ion-button size="large" color="danger" expand="block" routerLink="./animals" (click)="onClickdelete()" >Supprimer mon compte</ion-button>
   </div>
 </ion-content>

@@ -8,8 +8,17 @@
     </ion-card-header>
     <ion-card-content>
 
-      <ion-card-title style="text-transform: uppercase;">{{animal.type}}</ion-card-title>
+      <ion-card-title style="text-transform: uppercase;">{{animal.name}}</ion-card-title>¨
       <ion-card-subtitle>{{animal.type}}</ion-card-subtitle>
+      <ion-item>
+        <ion-label position="floating">Changer le nom de votre animal</ion-label>
+        <ion-input
+          inputmode="text"
+          [(ngModel)]="newName"
+          placeholder="{{animal.name}}"
+        ></ion-input>
+      </ion-item>
+    
 
       <ion-grid>
         <ion-row>
@@ -30,6 +39,7 @@
 
 
   <div id="container">
-    <ion-button size="large" color="primary" expand="block" routerLink="edit" >Modifier l'animal</ion-button>
+    <ion-button size="large" color="primary" expand="block" (click)="onClick()" routerLink="/home">Modifier l'animal</ion-button>
+    <ion-button size="large" color="danger" expand="block" (click)="onClickdelete()" routerLink="/home">Supprimer l'animal</ion-button>
   </div>
 </ion-content>

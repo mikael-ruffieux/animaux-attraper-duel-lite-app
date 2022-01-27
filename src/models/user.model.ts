@@ -15,7 +15,7 @@ export class User implements Deserializable {
 
   deserialize(input: any): this {
     // Assign input to our object BEFORE deserialize our animals to prevent already deserialized animals from being overwritten.
-    Object.assign(this, input.data);
+    Object.assign(this, input);
     return this;
   }
 };

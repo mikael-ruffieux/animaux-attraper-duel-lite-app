@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalUserService } from '@app/services/animaluser.service';
 import { AnimalUser } from 'src/models/animaluser.model';
+import { StoreService } from "../../store/store.service";
 
 @Component({
   selector: 'app-animals',
@@ -9,13 +10,12 @@ import { AnimalUser } from 'src/models/animaluser.model';
 })
 export class AnimalsPage implements OnInit {
   // Hardcoded until login is good
-  private pseudo = "SalamiSlayers69";
   animals: AnimalUser[];
 
-  constructor(private animalUserService: AnimalUserService) { }
+  constructor(private animalUserService: AnimalUserService, private store: StoreService) { }
 
   ngOnInit() {
-    this.animalUserService.getAllAnimals(this.pseudo).subscribe(animals => this.animals = animals);
+    this.animalUserService.getAllAnimals(this.store.username).subscribe(animals => this.animals = animals);
   }
 
 }
