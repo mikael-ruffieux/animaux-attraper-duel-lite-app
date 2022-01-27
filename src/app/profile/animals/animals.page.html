@@ -4,4 +4,8 @@
   <div *ngFor="let animal of animals; let i = index">
     <app-animal-button [animal]="animal"></app-animal-button>
   </div>
+
+  <div *ngIf="animals.length == 0">
+    <h2 style="text-align: center; padding-bottom: 20px;"><i>Vous n'avez aucun animal.</i></h2>
+  </div>
 </ion-content>
