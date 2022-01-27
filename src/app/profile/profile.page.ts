@@ -3,6 +3,9 @@ import { HttpClient } from "@angular/common/http";
 
 import { User } from 'src/models/user.model';
 
+import { StoreService } from "../store/store.service";
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -10,20 +13,23 @@ import { User } from 'src/models/user.model';
 })
 export class ProfilePage implements OnInit {
   // on devrait utiliser le modèle ici, mais j'arrive pas
-  profile: any;
+  profile: User;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private store: StoreService) {
   }
+
 
   ngOnInit() {
-    // Make an HTTP request to retrieve the trips.
-    // Hard-coded for now
-    const url = "https://animaux-attraper-duel-light.herokuapp.com/users/SalamiSlayers69";
-    this.http.get(url).subscribe((user) => {
+    
 
-      this.profile = user;
-      console.log(user);
+
+    const url = `https://animaux-attraper-duel-light.herokuapp.com/users/${this.store.username}`;
+    this.http.get(url).subscribe((user) => {
+      console.log(user[0]);
     });
-  }
+
+
+    }
+
 
 }

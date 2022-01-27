@@ -4,6 +4,7 @@ import { NgForm } from "@angular/forms";
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from "../auth/auth.service";
+import { StoreService } from "../store/store.service";
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -21,7 +22,7 @@ export class RegisterPage implements OnInit {
   isregister: boolean;
   loginError: boolean;
 
-  constructor(private router: Router, private http: HttpClient, private auth: AuthService) {
+  constructor(private store: StoreService, private router: Router, private http: HttpClient, private auth: AuthService) {
 
     this.genre="Homme";
     this.level = 1;
@@ -55,7 +56,10 @@ export class RegisterPage implements OnInit {
           password: this.password,
         }
         this.auth.logIn$(authRequest).subscribe({
-          next: () => this.router.navigateByUrl("/home"),
+          next: () => {
+            this.router.navigateByUrl("/home")
+            this.store.username = this.username
+        },
           error: (err) => {
             this.loginError = true;
             console.warn(`Authentication failed: ${err.message}`);

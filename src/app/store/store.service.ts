@@ -6,5 +6,6 @@ import { Injectable } from '@angular/core';
 export class StoreService {
 
   picture?: string ;
+  username?: string;
 
 }
