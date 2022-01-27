@@ -13,7 +13,8 @@ export class AnimalButtonComponent implements OnInit {
 
   @Output() pickingAnimal = new EventEmitter<AnimalUser>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {}
 

@@ -26,15 +26,16 @@ export class InProgressPage implements OnInit {
     this.animals = [];
 
     // Hardcoded for now
-    this.playersPseudo = ["SalamiSlayers69", "Anthony2"];
-    this.playersAnimalId = [2, 1];
+    this.playersPseudo = [this.store.username, "Anthony2"];
+    this.playersAnimalId = [this.store.fightingAnimalId, 1];
   }
 
   ngOnInit() {
     for (let i = 0; i < this.playersPseudo.length; i++) {
-      this.userService.getUser(this.playersPseudo[i]).subscribe(user => this.adversaries.push(user));
+      this.userService.getUser(this.playersPseudo[i]).subscribe(user => this.adversaries[i] = user);
       this.animalUserService.getAnimal(this.playersPseudo[i], this.playersAnimalId[i]).subscribe(animal => this.animals[i] = animal);
     }
+    console.log(this.adversaries, this.animals);
   }
 
 }
