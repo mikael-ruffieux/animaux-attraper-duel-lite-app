@@ -8,6 +8,7 @@ import { AnimalUser } from 'src/models/animaluser.model';
 })
 export class AnimalButtonComponent implements OnInit {
   @Input() animal: AnimalUser;
+  @Input() fight: boolean = false;
 
   constructor() { }
 

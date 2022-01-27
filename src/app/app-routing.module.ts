@@ -45,6 +45,10 @@ const routes: Routes = [
     path: 'capture',
     loadChildren: () => import('./capture/capture.module').then( m => m.CapturePageModule)
 
+  },
+  {
+    path: 'fight',
+    loadChildren: () => import('./fight/fight.module').then( m => m.FightPageModule)
   }
 
 ];

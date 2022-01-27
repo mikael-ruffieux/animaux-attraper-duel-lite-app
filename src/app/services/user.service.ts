@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import { User } from 'src/models/user.model';
 import {map} from 'rxjs/operators';
+import { Users } from 'src/models/users.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,9 @@ export class UserService {
     );
   }
 
-  public getAllUsers(): Observable<User[]> {
-    return this.httpService.get<User[]>(`https://animaux-attraper-duel-light.herokuapp.com/users`).pipe(
-      map(data => data.map(data => new User().deserialize(data)))
+  public getAllUsers(): Observable<Users> {
+    return this.httpService.get<Users>(`https://animaux-attraper-duel-light.herokuapp.com/users?pageSize=100`).pipe(
+      map(data => new Users().deserialize(data))
     );
   }
 }

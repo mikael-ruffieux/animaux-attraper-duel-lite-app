@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Animal} from '../../models/animal.model'
+import {Animal} from 'src/models/animal.model'
 import {map} from 'rxjs/operators';
 
 @Injectable({

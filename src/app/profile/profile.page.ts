@@ -20,9 +20,7 @@ export class ProfilePage implements OnInit {
     // Hard-coded for now
     const url = "https://animaux-attraper-duel-light.herokuapp.com/users/SalamiSlayers69";
     this.http.get(url).subscribe((user) => {
-
       this.profile = user;
-      console.log(user);
     });
   }
 

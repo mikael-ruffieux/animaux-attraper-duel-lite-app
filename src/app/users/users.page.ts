@@ -9,13 +9,16 @@ import { UserService } from '@app/services/user.service';
   styleUrls: ['./users.page.scss'],
 })
 export class UsersPage implements OnInit {
+  public orderUsers(users: User[]) {
+    return users.sort((a, b) => (b.level-a.level)) ;
+  }
 
-  apiPlayers: User[];
+  public apiPlayers: User[];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getAllUsers().subscribe(users => this.apiPlayers = users);
+    this.userService.getAllUsers().subscribe((users) => this.apiPlayers = users.data);
   }
 
 }
