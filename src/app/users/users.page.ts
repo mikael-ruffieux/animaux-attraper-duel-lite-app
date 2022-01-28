@@ -15,10 +15,12 @@ export class UsersPage implements OnInit {
 
   public apiPlayers: User[];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+    this.apiPlayers = [];
+    this.userService.getAllUsers().subscribe((users) => this.apiPlayers = users.data);
+  }
 
   ngOnInit() {
-    this.userService.getAllUsers().subscribe((users) => this.apiPlayers = users.data);
   }
 
 }
