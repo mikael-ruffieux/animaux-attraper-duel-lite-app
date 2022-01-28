@@ -38,7 +38,6 @@ export class WebsocketService {
           // When the websocket closes, the observable completes
           socket.onclose = () => subscriber.complete();
           // Function that will be called if the user manually unsubscribe
-          console.log("WS closed.");
           return () => socket.close();
         })
       ),

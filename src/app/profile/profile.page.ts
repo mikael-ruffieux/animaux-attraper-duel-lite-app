@@ -15,18 +15,18 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  // on devrait utiliser le modèle ici, mais j'arrive pas
-  profile: Omit<User, 'deserialize'|'animalUserService'>;
+  profile: User;
 
   constructor(public http: HttpClient, private store: StoreService,  private userService: UserService) {
-    this.userService.getUser(this.store.username).subscribe(user =>{
-      this.profile = user
-    });
+    
   }
 
 
   ngOnInit() {
-    
+
+    this.userService.getUser(this.store.username).subscribe(user =>{
+      this.profile = user
+    });
     }
 
 
