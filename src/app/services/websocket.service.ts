@@ -11,6 +11,7 @@ export class WebsocketService {
   // A ReplaySubject will emit its X latest values (1 in this case) each time
   // its 'subscribe()' method is called
   private ws$ = new ReplaySubject<WebSocket>(1);
+  
 
   constructor() {
       const socket = new WebSocket(WS_SERVER_URL);
@@ -43,4 +44,11 @@ export class WebsocketService {
       map((event: MessageEvent<T>) => event.data)
       );
   }
+
+  public send(data:unknown): void {
+    this.ws$.subscribe(socket => {
+      socket.send(JSON.stringify(data));
+    })
+  }
+
 }

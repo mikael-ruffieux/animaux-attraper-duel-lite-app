@@ -3,6 +3,7 @@ import { AnimalUserService } from '@app/services/animaluser.service';
 import { AnimalUser } from 'src/models/animaluser.model';
 import { EventEmitter } from '@angular/core';
 import { StoreService } from '@app/store/store.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fight',
@@ -17,19 +18,19 @@ export class FightPage implements OnInit {
   animals: AnimalUser[];
   pickedAnimal: AnimalUser;
 
-  constructor(private animalUserService: AnimalUserService, private store: StoreService) {
+  constructor(private animalUserService: AnimalUserService, private store: StoreService, private router:Router) {
     this.store.username = this.pseudo;
     this.animals= []
   }
 
   ngOnInit() {
     this.animalUserService.getAllAnimals(this.pseudo).subscribe(animals => this.animals = animals);
-    console.log(this.animals);
   }
 
   pickAnimal(id) {
     this.store.fightingAnimalId = id;
-    console.log(this.store.fightingAnimalId);
+    console.log("#1 : When does it trigger ?" , this.store.fightingAnimalId);
+    this.router.navigate(['/fight/searching']);
   }
 
 

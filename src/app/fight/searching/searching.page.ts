@@ -14,17 +14,26 @@ export class SearchingPage implements OnInit {
   private animalId: number;
 
   constructor(private store: StoreService, private wsService: WebsocketService) {
-    this.pseudo = this.store.username;
+    console.log("Store: " , store.fightingAnimalId);
 
     this.wsService
       .listen<WsMessageStart>()
       .subscribe(message => {
-        console.log("from searching.page.ts -->", message);
+        console.log("#3 : from searching.page.ts -->", message);
       });
+
+    let data = {
+      "type": "start",
+      "pseudo": this.pseudo,
+      "animalID": this.animalId
+    }
+
+    this.wsService.send(data);
   }
 
   ngOnInit() {
+    this.pseudo = this.store.username;
     this.animalId = this.store.fightingAnimalId;
-    console.log(this.pseudo, this.animalId);
+    console.log("#2 : ", this.pseudo, this.animalId);
   }
 }
