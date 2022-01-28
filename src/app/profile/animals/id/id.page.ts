@@ -51,7 +51,7 @@ export class IdPage implements OnInit {
   
       });
 
-      this.router.navigate(["/profile/animals"]);
+      this.router.navigate(["/profile"]);
 
 
     }

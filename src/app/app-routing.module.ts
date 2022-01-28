@@ -5,7 +5,7 @@ import { AuthGuard } from "./auth/auth.guard";
 const routes: Routes = [
   {
     path: 'home',
-    //canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -15,6 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'components',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./components/components.module').then( m => m.ComponentsPageModule)
   },
   {
@@ -31,23 +32,28 @@ const routes: Routes = [
   },
   {
     path: 'profile',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
     path: 'users',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./users/users.module').then( m => m.UsersPageModule)
   },
   {
     path: 'animals',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./animals/animals.module').then( m => m.AnimalsPageModule)
   },
   {
     path: 'capture',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./capture/capture.module').then( m => m.CapturePageModule)
 
   },
   {
     path: 'fight',
+    canActivate: [AuthGuard],
     loadChildren: () => import('./fight/fight.module').then( m => m.FightPageModule)
   }
 
