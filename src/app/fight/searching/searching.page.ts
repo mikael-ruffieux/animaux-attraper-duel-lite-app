@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '@app/store/store.service';
 import { WsMessage } from 'src/models/wsmessage.model';
-
-import { WebsocketService } from '@app/services/websocket.service';
 import { Router } from '@angular/router';
+import { WebsocketService } from '@app/services/websocket.service';
 
 @Component({
   selector: 'app-searching',
@@ -15,7 +14,9 @@ export class SearchingPage implements OnInit {
   private animalId: number;
   private data: unknown;
 
-  constructor(private store: StoreService, private wsService: WebsocketService, private router:Router) {
+  constructor(private store: StoreService, private router:Router, private wsService: WebsocketService) {
+
+  
 
   }
 
@@ -25,14 +26,19 @@ export class SearchingPage implements OnInit {
     this.animalId = this.store.fightingAnimalId;*/
 
     // For dev
-    this.pseudo = "SalamiSlayers69";
-    this.animalId = 1;
+    // this.pseudo = "SalamiSlayers69";
+    // this.animalId = 1;
 
-    console.log(this);
+   
+
   }
 
   begin() {
-    this.wsService.ws$.unsubscribe();
     this.router.navigate(['/fight/in-progress']);
+  }
+
+
+  click() {
+     this.wsService.disconnect()
   }
 }

@@ -3,7 +3,7 @@
 <ion-content [fullscreen]="true" class="background-image" padding>
   <div *ngIf="animals.length > 0">
     <div *ngFor="let animal of animals; let i = index">
-      <app-animal-button [animal]="animal" [fight]=true (click)="pickAnimal(animal.id)"></app-animal-button>
+      <app-animal-button [animal]="animal" [fight]=true (click)="pickAnimal(animal.id)">{{animal}}</app-animal-button>
     </div>
   </div>
 

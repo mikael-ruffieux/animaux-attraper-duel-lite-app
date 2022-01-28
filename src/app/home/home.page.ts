@@ -46,6 +46,9 @@ export class HomePage {
     this.router.navigateByUrl("/start");
   }
 
+
+  
+ 
   ngOnInit() {
   }
 }

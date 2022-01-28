@@ -8,20 +8,15 @@ const WS_SERVER_URL = 'ws://animaux-attraper-duel-light.herokuapp.com';
   providedIn: 'root'
 })
 export class WebsocketService {
+
+  private ws: WebSocket;
   // A ReplaySubject will emit its X latest values (1 in this case) each time
   // its 'subscribe()' method is called
   public ws$ = new ReplaySubject<WebSocket>(1);
   
 
   constructor() {
-      const socket = new WebSocket(WS_SERVER_URL);
-      socket.onopen = () => {
-        console.log('Successfully connected to the WebSocket at', WS_SERVER_URL);
-        // When the connection is done, emit the WebSocket instance
-        this.ws$.next(socket);
-      }
-      // Log all messages
-      socket.onmessage = message => console.log(message);
+  
   };
 
   public listen<T = any>(): Observable<T> {
@@ -38,7 +33,6 @@ export class WebsocketService {
           // When the websocket closes, the observable completes
           socket.onclose = () => subscriber.complete();
           // Function that will be called if the user manually unsubscribe
-          console.log("WS closed.");
           return () => socket.close();
         })
       ),
@@ -50,6 +44,23 @@ export class WebsocketService {
     this.ws$.subscribe(socket => {
       socket.send(JSON.stringify(data));
     })
+  }
+
+  public connect(){
+    const socket = new WebSocket(WS_SERVER_URL);
+    socket.onopen = () => {
+      console.log('Successfully connected to the WebSocket at', WS_SERVER_URL);
+      // When the connection is done, emit the WebSocket instance
+      this.ws$.next(socket);
+    }
+    // Log all messages
+    socket.onmessage = message => console.log(message);
+  }
+
+
+  public disconnect(){
+    this.ws$.subscribe((socket)=> socket.close())
+
   }
 
 }

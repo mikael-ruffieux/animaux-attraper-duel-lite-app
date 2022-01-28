@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsocketService } from '@app/services/websocket.service';
+import { StoreService } from '@app/store/store.service';
 
 @Component({
   selector: 'app-result',
@@ -7,10 +8,13 @@ import { WebsocketService } from '@app/services/websocket.service';
   styleUrls: ['./result.page.scss'],
 })
 export class ResultPage implements OnInit {
-  win: boolean;
+  win: string;
 
-  constructor() {
-    this.win = true;
+  constructor(private store: StoreService) {
+    this.win = this.store.win;
+
+ 
+
 
     
   }

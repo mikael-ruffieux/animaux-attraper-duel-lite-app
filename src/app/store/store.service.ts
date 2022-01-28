@@ -9,5 +9,8 @@ export class StoreService {
   picture?: string ;
   username?: string;
   fightingAnimalId?: number;
+  players?: string;
+  win?: string;
+  setinterval?:boolean
 
 }
