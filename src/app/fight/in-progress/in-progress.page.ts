@@ -25,9 +25,14 @@ export class InProgressPage implements OnInit {
     this.adversaries = [];
     this.animals = [];
 
-    // Hardcoded for now
+    //Dev
+    this.playersPseudo = ["SalamiSlayers69", "Anthony2"];
+    this.playersAnimalId = [1, 1];
+
+    /* Semi-prod
     this.playersPseudo = [this.store.username, "Anthony2"];
     this.playersAnimalId = [this.store.fightingAnimalId, 1];
+    */
   }
 
   ngOnInit() {

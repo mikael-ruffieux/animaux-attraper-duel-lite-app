@@ -10,7 +10,7 @@ const WS_SERVER_URL = 'ws://animaux-attraper-duel-light.herokuapp.com';
 export class WebsocketService {
   // A ReplaySubject will emit its X latest values (1 in this case) each time
   // its 'subscribe()' method is called
-  private ws$ = new ReplaySubject<WebSocket>(1);
+  public ws$ = new ReplaySubject<WebSocket>(1);
   
 
   constructor() {
@@ -38,6 +38,7 @@ export class WebsocketService {
           // When the websocket closes, the observable completes
           socket.onclose = () => subscriber.complete();
           // Function that will be called if the user manually unsubscribe
+          console.log("WS closed.");
           return () => socket.close();
         })
       ),

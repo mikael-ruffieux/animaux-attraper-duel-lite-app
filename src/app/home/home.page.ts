@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { QimgImage } from "../../models/QimgImage.model";
 import { PictureService } from "../../app/picture/picture.service";
 import { AuthService } from "../auth/auth.service";
@@ -17,17 +17,15 @@ export class HomePage {
   picture: QimgImage;
 
   constructor(
-    
     private pictureService: PictureService,
     private auth: AuthService,
     private router: Router,
     private store: StoreService
-
-
-  ) {}
+  ) {
+  }
 
   
-  takePicture() {
+  public takePicture() {
     this.pictureService.takeAndUploadPicture().subscribe({
       next: (picture) => {
         this.picture = picture;
@@ -42,10 +40,12 @@ export class HomePage {
     });
   }
 
-  logOut() {
+  public logOut() {
     console.log("logging out...");
     this.auth.logOut();
     this.router.navigateByUrl("/start");
   }
 
+  ngOnInit() {
+  }
 }

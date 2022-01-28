@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WebsocketService } from '@app/services/websocket.service';
 
 @Component({
   selector: 'app-result',
@@ -10,6 +11,8 @@ export class ResultPage implements OnInit {
 
   constructor() {
     this.win = true;
+
+    
   }
 
   ngOnInit() {

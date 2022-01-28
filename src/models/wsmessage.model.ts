@@ -1,9 +1,5 @@
-export type WsMessageStart = {
+export type WsMessage = {
     type: string;
-    pseudo: string;
-    animalID: number;
-};
-
-export type WsMessagePlay = {
-    type: string;
+    pseudo?: string;
+    animalID?: number;
 };

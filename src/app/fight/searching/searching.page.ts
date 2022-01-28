@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from '@app/store/store.service';
-import { WsMessageStart, WsMessagePlay } from 'src/models/wsmessage.model';
+import { WsMessage } from 'src/models/wsmessage.model';
 
 import { WebsocketService } from '@app/services/websocket.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searching',
@@ -12,28 +13,26 @@ import { WebsocketService } from '@app/services/websocket.service';
 export class SearchingPage implements OnInit {
   private pseudo: string;
   private animalId: number;
+  private data: unknown;
 
-  constructor(private store: StoreService, private wsService: WebsocketService) {
-    console.log("Store: " , store.fightingAnimalId);
+  constructor(private store: StoreService, private wsService: WebsocketService, private router:Router) {
 
-    this.wsService
-      .listen<WsMessageStart>()
-      .subscribe(message => {
-        console.log("#3 : from searching.page.ts -->", message);
-      });
-
-    let data = {
-      "type": "start",
-      "pseudo": this.pseudo,
-      "animalID": this.animalId
-    }
-
-    this.wsService.send(data);
   }
 
   ngOnInit() {
+    /* For prod
     this.pseudo = this.store.username;
-    this.animalId = this.store.fightingAnimalId;
-    console.log("#2 : ", this.pseudo, this.animalId);
+    this.animalId = this.store.fightingAnimalId;*/
+
+    // For dev
+    this.pseudo = "SalamiSlayers69";
+    this.animalId = 1;
+
+    console.log(this);
+  }
+
+  begin() {
+    this.wsService.ws$.unsubscribe();
+    this.router.navigate(['/fight/in-progress']);
   }
 }
