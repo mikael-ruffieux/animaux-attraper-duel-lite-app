@@ -36,9 +36,4 @@ export class SearchingPage implements OnInit {
   begin() {
     this.router.navigate(['/fight/in-progress']);
   }
-
-
-  click() {
-     this.wsService.disconnect()
-  }
 }

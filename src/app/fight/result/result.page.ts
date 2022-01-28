@@ -12,11 +12,6 @@ export class ResultPage implements OnInit {
 
   constructor(private store: StoreService) {
     this.win = this.store.win;
-
- 
-
-
-    
   }
 
   ngOnInit() {

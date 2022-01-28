@@ -31,38 +31,34 @@ export class CapturePage implements OnInit {
   ngOnInit() {
 
     this.animalService.getAllAnimals().subscribe(animals => {
-      this.animals = animals
-
+      this.animals = animals;
 
       this.animalUserService.getAllAnimals(this.store.username).subscribe(animal => {
-        this.animalsUser = animal
-
-
+        this.animalsUser = animal;
       });
-
-
-
-
     })
-
   }
 
-  onSubmit() {
-
-
-
-
-
-    this.retrieveAnimal = {
+  private returnAnimalData(animal: Animal) : Omit<AnimalUser, 'deserialize'> {
+    let animalData = {
       id: 1,
       type: this.animalType,
       name: this.animalName,
-      hp: 1,
-      attack: 1,
-      level: 1,
+      hp: this.getRandomStat(animal.hp_default, animal.hp_variation),
+      attack: this.getRandomStat(animal.attack_default, animal.attack_variation),
+      level: this.getRandomStat(animal.level_default, animal.level_variation),
       picture: this.pictureURL,
     };
+    return animalData;
+  }
 
+  private getRandomStat(default_stat : number, variation : number) : number {
+    return Math.floor(Math.random() * ((default_stat + variation) - (default_stat - variation)) + (default_stat - variation));
+  }
+
+  onSubmit() {
+    let animalModel = this.animals.filter(animal => animal.type == this.animalType)[0];
+    this.retrieveAnimal = this.returnAnimalData(animalModel);
 
     if (this.animalsUser.length === 0) {
       this.retrieveAnimal.id = 1
@@ -75,9 +71,7 @@ export class CapturePage implements OnInit {
       
     }
 
-  
-
-    console.log(JSON.stringify(this.retrieveAnimal))
+    console.log(JSON.stringify(this.retrieveAnimal));
 
     let test = this.http.post(`${environment.apiUrl}users/${this.store.username}/animals`, this.retrieveAnimal)
 

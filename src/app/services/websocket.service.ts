@@ -47,6 +47,7 @@ export class WebsocketService {
   }
 
   public connect(){
+    this.ws$.isStopped = false;
     const socket = new WebSocket(WS_SERVER_URL);
     socket.onopen = () => {
       console.log('Successfully connected to the WebSocket at', WS_SERVER_URL);
@@ -60,7 +61,10 @@ export class WebsocketService {
 
   public disconnect(){
     this.ws$.subscribe((socket)=> socket.close())
-
+    this.ws$.closed = true;
+    console.log("Status : ", this.ws$.isStopped);
+    this.ws$.isStopped = true;
+    console.log("Status : ", this.ws$.isStopped);
   }
 
 }
