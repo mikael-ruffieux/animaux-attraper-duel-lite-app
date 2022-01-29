@@ -21,7 +21,7 @@ export class AnimalsPage implements OnInit {
   }
 
   ngOnInit() {
-    this.animalUserService.getAllAnimals("SalamiSlayers69").subscribe(animals => this.animals = animals);
+    this.animalUserService.getAllAnimals(this.store.username).subscribe(animals => this.animals = animals);
     this.animalService.getAllAnimals().subscribe(animals => this.animalTypes = animals);    
   }
 
