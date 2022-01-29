@@ -1,9 +1,19 @@
 <app-page-title [title]="'animals'"></app-page-title>
 
 <ion-content [fullscreen]="true" class="background-image" padding>
+
+  <ion-item id="filters">
+    <ion-label>Filtrer mes animaux</ion-label>
+    <ion-select multiple="true" [value]="[]">
+      <ion-select-option *ngFor="let animalType of animalTypes" value="{{animalType._id}}" (ionSelect)="reload()">{{animalType.type}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
   <div *ngFor="let animal of animals; let i = index">
     <app-animal-button [animal]="animal"></app-animal-button>
   </div>
+
+  {{animalTypes}}
 
   <div *ngIf="animals.length == 0">
     <h2 style="text-align: center; padding-bottom: 20px;"><i>Vous n'avez aucun animal.</i></h2>
